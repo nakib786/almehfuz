@@ -121,8 +121,8 @@ export default function ContactPage() {
                                 </h2>
                                 {[
                                     { icon: '📍', label: t('addr-label'), value: t('addr-val') },
-                                    { icon: '📞', label: t('phone-label'), value: '+00 000 000 0000' },
-                                    { icon: '✉', label: t('email-label'), value: 'info@almehfuz.example' },
+                                    { icon: '📞', label: t('phone-label'), value: t('phone-val') },
+                                    { icon: '✉', label: t('email-label'), value: t('email-val') },
                                 ].map((item, i) => (
                                     <div key={i} style={{ display: 'flex', gap: '14px', marginBottom: '20px' }}>
                                         <span style={{ fontSize: '1.2rem', flexShrink: 0 }}>{item.icon}</span>

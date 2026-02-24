@@ -355,6 +355,15 @@ export default function HomePage() {
                 </div>
               </div>
               <div style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
+                <div style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '2px' }}>📞</div>
+                <div>
+                  <div style={{ fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>
+                    {t('phone-label')}
+                  </div>
+                  <div style={{ fontSize: '0.95rem', lineHeight: 1.7 }}>{t('phone-val')}</div>
+                </div>
+              </div>
+              <div style={{ display: 'flex', gap: '16px', marginBottom: '20px' }}>
                 <div style={{ fontSize: '1.3rem', flexShrink: 0, marginTop: '2px' }}>🕐</div>
                 <div>
                   <div style={{ fontSize: '0.75rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--gold)', fontWeight: 600 }}>
@@ -383,24 +392,22 @@ export default function HomePage() {
             </div>
             <div
               style={{
-                background: 'linear-gradient(135deg, rgba(15,31,61,0.06), rgba(26,92,66,0.06))',
                 border: '1px solid rgba(201,168,76,0.25)',
                 borderRadius: 'var(--radius)',
-                height: '220px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--text2)',
-                fontSize: '0.9rem',
-                fontStyle: 'italic',
-                textAlign: 'center',
+                height: '300px',
+                overflow: 'hidden',
+                background: 'rgba(0,0,0,0.2)',
               }}
             >
-              <span>
-                🗺 Map placeholder
-                <br />
-                <small>Embed your map here</small>
-              </span>
+              <iframe
+                title="Google Maps"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                allowFullScreen
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2212.391064109657!2d73.06278859838102!3d20.78228114052743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0ed158806d347%3A0x55cc4ceb9ed2ef98!2sMehfuz%20Baugh%2C%20Thala%2C%20Chikhli%2C%20Gujarat%20396521%2C%20India!5e1!3m2!1sen!2sca!4v1771895812396!5m2!1sen!2sca"
+              ></iframe>
             </div>
           </div>
         </div>

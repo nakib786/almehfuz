@@ -113,6 +113,7 @@ export default function Footer() {
                                 { href: '/teachings', key: 'nav-teachings' },
                                 { href: '/gallery', key: 'nav-gallery' },
                                 { href: '/contact', key: 'nav-contact' },
+                                { href: '/sitemap', key: 'nav-sitemap' },
                             ].map((link) => (
                                 <li key={link.key} style={{ marginBottom: '8px' }}>
                                     <Link
@@ -138,8 +139,9 @@ export default function Footer() {
                 </div>
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '32px', borderTop: '1px solid rgba(201,168,76,0.15)', paddingTop: '24px' }}>
-                    <p style={{ fontSize: '0.8rem', color: 'rgba(201,168,76,0.35)' }}>{t('copyright')}</p>
-                    <p style={{ fontSize: '0.75rem', color: 'rgba(245,242,236,0.3)' }}>Demo Site</p>
+                    <p style={{ fontSize: '0.8rem', color: 'rgba(201,168,76,0.35)' }}>
+                        {t('copyright').replace('{year}', new Date().getFullYear().toString())}
+                    </p>
                 </div>
             </div>
         </footer>
