@@ -1,0 +1,480 @@
+@import "tailwindcss";
+
+/* Fonts loaded via <link> in layout.tsx */
+
+/* ============================================================
+   CSS VARIABLES — Royal Islamic Palette
+   ============================================================ */
+:root {
+  /* Backgrounds */
+  --bg: #f2ede0;
+  --bg2: #e8e0cc;
+  --surface: #faf7ef;
+
+  /* Text */
+  --text: #0c1a10;
+  --text2: #3d5c46;
+
+  /* Primary accent: Royal Emerald */
+  --accent: #1a5c42;
+  --accent-h: #0d3b2e;
+  --accent-l: #2e8c66;
+
+  /* Gold accent */
+  --gold: #c9a84c;
+  --gold2: #e8c96a;
+  --gold3: #f5e4a8;
+
+  /* Navy */
+  --navy: #0f1f3d;
+  --navy2: #1c3560;
+
+  /* Crimson */
+  --crimson: #7b1f2e;
+
+  /* Borders & shadows */
+  --border: #c8bb99;
+  --border2: #1a5c4240;
+  --shadow: rgba(15, 31, 61, 0.12);
+
+  /* Fonts */
+  --font-en: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-ur: 'Noto Nastaliq Urdu', serif;
+  --font-ar: 'Noto Naskh Arabic', serif;
+  --font-hi: 'Noto Serif Devanagari', serif;
+
+  --radius: 4px;
+  --max-w: 1100px;
+  --header-h: 72px;
+  --transition: 0.3s ease;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-en);
+  font-size: 18px;
+  line-height: 1.75;
+  min-height: 100vh;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(26, 92, 66, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 100%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+}
+
+body.nav-open {
+  overflow: hidden;
+}
+
+
+body.lang-ur {
+  font-family: var(--font-ur);
+}
+
+body.lang-ar {
+  font-family: var(--font-ar);
+}
+
+body.lang-hi {
+  font-family: var(--font-hi);
+}
+
+[dir="rtl"] {
+  text-align: right;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.container {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* ============================================================
+   GEOMETRIC BACKGROUND
+   ============================================================ */
+.geo-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.geo-bg svg {
+  width: 100%;
+  height: 100%;
+  opacity: 0.055;
+}
+
+/* ============================================================
+   GOLDSHIMMER ANIMATION
+   ============================================================ */
+@keyframes goldShimmer {
+
+  0%,
+  100% {
+    text-shadow: 0 2px 20px rgba(201, 168, 76, 0.4);
+  }
+
+  50% {
+    text-shadow: 0 2px 40px rgba(232, 201, 106, 0.8), 0 0 80px rgba(201, 168, 76, 0.3);
+  }
+}
+
+.hero-bismillah {
+  animation: goldShimmer 3s ease-in-out infinite;
+}
+
+/* ============================================================
+   LOGO GLOW EFFECT
+   ============================================================ */
+.logo-glow {
+  filter: drop-shadow(0 0 8px rgba(201, 168, 76, 0.4));
+  transition: var(--transition);
+}
+
+.logo-glow:hover {
+  filter: drop-shadow(0 0 15px rgba(232, 201, 106, 0.7));
+}
+
+/* ============================================================
+   FADE IN ANIMATION
+   ============================================================ */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.page-enter {
+  animation: fadeIn 0.4s ease;
+}
+
+/* ============================================================
+   HERO PATTERN
+   ============================================================ */
+.hero-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M30 0l7.5 12.99L52.5 7.5v15l12.99 7.5L52.5 37.5V52.5l-15-7.5L30 60l-7.5-12.99L7.5 52.5V37.5L-5.49 30 7.5 22.5V7.5l15 7.5L30 0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   DIVIDER ORNAMENT
+   ============================================================ */
+.divider {
+  width: 56px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 20px auto;
+  position: relative;
+}
+
+.divider::before,
+.divider::after {
+  content: '◆';
+  position: absolute;
+  font-size: 8px;
+  color: var(--gold);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.divider::before {
+  left: -18px;
+}
+
+.divider::after {
+  right: -18px;
+}
+
+/* ============================================================
+   CARDS
+   ============================================================ */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(15, 31, 61, 0.12);
+  border-color: var(--gold);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* ============================================================
+   SCHEDULE TABLE
+   ============================================================ */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+}
+
+.schedule-table th,
+.schedule-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+
+[dir="rtl"] .schedule-table th,
+[dir="rtl"] .schedule-table td {
+  text-align: right;
+}
+
+.schedule-table th {
+  background: var(--navy);
+  color: var(--gold2);
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.schedule-table tr:hover td {
+  background: var(--gold3);
+}
+
+/* ============================================================
+   TIMELINE
+   ============================================================ */
+.timeline {
+  position: relative;
+  padding-left: 40px;
+}
+
+[dir="rtl"] .timeline {
+  padding-left: 0;
+  padding-right: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), var(--accent), var(--gold));
+}
+
+[dir="rtl"] .timeline::before {
+  left: auto;
+  right: 12px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -34px;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  background: var(--accent);
+  box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.15);
+}
+
+[dir="rtl"] .timeline-dot {
+  left: auto;
+  right: -34px;
+}
+
+/* ============================================================
+   ETIQUETTE LIST
+   ============================================================ */
+.etiquette-list {
+  list-style: none;
+}
+
+.etiquette-list li {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 12px;
+  font-size: 0.95rem;
+}
+
+.etiquette-list li::before {
+  content: '✦';
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.etiquette-list li:last-child {
+  border-bottom: none;
+}
+
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(0, 0, 0, 0.92);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+/* ============================================================
+   FORMS
+   ============================================================ */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="search"],
+textarea,
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-family: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  outline: none;
+  transition: var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(26, 92, 66, 0.1);
+}
+
+textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 900px) {
+
+  .grid-3,
+  .album-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  .visit-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (max-width: 640px) {
+
+  .grid-3,
+  .grid-2,
+  .album-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ============================================================
+   SCROLLBAR STYLING
+   ============================================================ */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}

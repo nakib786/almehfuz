@@ -1,0 +1,2920 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Al Mehfuz Khanqah ae Qadriyaa</title>
+  <meta name="description"
+    content="Al Mehfuz Khanqah ae Qadriyaa – A sanctuary of spiritual learning, remembrance, and community rooted in the Qadri tradition.">
+  <meta property="og:title" content="Al Mehfuz Khanqah ae Qadriyaa">
+  <meta property="og:description" content="A sanctuary of spiritual learning, remembrance, and community.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Nastaliq+Urdu:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&family=Noto+Serif+Devanagari:wght@400;600&family=EB+Garamond:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ============================================================
+   CSS VARIABLES & RESET
+   Royal Islamic Palette:
+   – Deep Emerald Green  (#0d3b2e / #1a5c42) — Islam's sacred colour
+   – Royal Gold          (#c9a84c / #e8c96a) — divine light, grandeur
+   – Midnight Navy       (#0f1f3d)            — depth, dignity
+   – Ivory Parchment     (#f7f3e8)            — aged manuscript warmth
+   – Rich Crimson        (#7b1f2e)            — accent for badges/tags
+   ============================================================ */
+    :root {
+      /* Backgrounds */
+      --bg: #f2ede0;
+      /* warm ivory parchment */
+      --bg2: #e8e0cc;
+      /* slightly deeper parchment */
+      --surface: #faf7ef;
+      /* near-white warm ivory */
+
+      /* Text */
+      --text: #0c1a10;
+      /* very dark forest green-black */
+      --text2: #3d5c46;
+      /* muted emerald for secondary text */
+
+      /* Primary accent: Royal Emerald */
+      --accent: #1a5c42;
+      /* deep Islamic green */
+      --accent-h: #0d3b2e;
+      /* darker hover state */
+      --accent-l: #2e8c66;
+      /* lighter emerald */
+
+      /* Gold accent */
+      --gold: #c9a84c;
+      /* royal gold */
+      --gold2: #e8c96a;
+      /* lighter gold highlight */
+      --gold3: #f5e4a8;
+      /* pale gold tint for backgrounds */
+
+      /* Navy */
+      --navy: #0f1f3d;
+      /* midnight navy */
+      --navy2: #1c3560;
+      /* slightly lighter navy */
+
+      /* Crimson (tags/badges) */
+      --crimson: #7b1f2e;
+
+      /* Borders & shadows */
+      --border: #c8bb99;
+      /* warm gold-tinted border */
+      --border2: #1a5c4240;
+      /* transparent emerald border */
+      --shadow: rgba(15, 31, 61, 0.12);
+
+      --font-en: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+      --font-ur: 'Noto Nastaliq Urdu', serif;
+      --font-ar: 'Noto Naskh Arabic', serif;
+      --font-hi: 'Noto Serif Devanagari', serif;
+      --radius: 4px;
+      --max-w: 1100px;
+      --header-h: 72px;
+      --transition: 0.3s ease;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-en);
+      font-size: 18px;
+      line-height: 1.75;
+      min-height: 100vh;
+      /* Subtle warm parchment texture */
+      background-image:
+        radial-gradient(ellipse at 20% 0%, rgba(26, 92, 66, 0.04) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 100%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+    }
+
+    body.lang-ur {
+      font-family: var(--font-ur);
+    }
+
+    body.lang-ar {
+      font-family: var(--font-ar);
+    }
+
+    body.lang-hi {
+      font-family: var(--font-hi);
+    }
+
+    [dir="rtl"] {
+      text-align: right;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    button {
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+    }
+
+    /* ============================================================
+   GEOMETRIC BACKGROUND
+   ============================================================ */
+    .geo-bg {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .geo-bg svg {
+      width: 100%;
+      height: 100%;
+      opacity: 0.055;
+    }
+
+    /* ============================================================
+   HEADER
+   ============================================================ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(15, 31, 61, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--gold);
+      height: var(--header-h);
+      display: flex;
+      align-items: center;
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 24px;
+      gap: 16px;
+    }
+
+    .logo {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--gold2);
+      line-height: 1.2;
+      flex-shrink: 0;
+      max-width: 200px;
+      letter-spacing: 0.02em;
+    }
+
+    .logo span {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 400;
+      color: rgba(232, 201, 106, 0.6);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    nav a {
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: rgba(232, 201, 106, 0.75);
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      transition: var(--transition);
+      white-space: nowrap;
+    }
+
+    nav a:hover,
+    nav a.active {
+      color: var(--gold2);
+      background: rgba(201, 168, 76, 0.15);
+      text-decoration: none;
+      border-bottom: 2px solid var(--gold);
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    /* Language Switcher */
+    .lang-switcher {
+      position: relative;
+    }
+
+    .lang-btn {
+      background: none;
+      border: 1px solid rgba(201, 168, 76, 0.5);
+      padding: 6px 12px;
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: var(--gold2);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .lang-btn:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201, 168, 76, 0.1);
+    }
+
+    .lang-dropdown {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      background: var(--navy);
+      border: 1px solid var(--gold);
+      border-radius: var(--radius);
+      min-width: 140px;
+      box-shadow: 0 8px 32px rgba(15, 31, 61, 0.4);
+      display: none;
+      z-index: 200;
+    }
+
+    [dir="rtl"] .lang-dropdown {
+      right: auto;
+      left: 0;
+    }
+
+    .lang-dropdown.open {
+      display: block;
+    }
+
+    .lang-option {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      font-size: 0.85rem;
+      color: rgba(232, 201, 106, 0.8);
+      cursor: pointer;
+      transition: var(--transition);
+      border: none;
+      background: none;
+      width: 100%;
+      text-align: left;
+    }
+
+    .lang-option:hover {
+      background: rgba(201, 168, 76, 0.15);
+      color: var(--gold2);
+    }
+
+    .lang-option.active {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid rgba(201, 168, 76, 0.4);
+      padding: 6px 10px;
+      border-radius: var(--radius);
+      color: var(--gold2);
+      font-size: 1.2rem;
+      position: relative;
+      z-index: 1001;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* ============================================================
+   FOOTER
+   ============================================================ */
+    footer {
+      background: linear-gradient(135deg, var(--navy) 0%, #0a1628 40%, #071420 100%);
+      color: var(--bg);
+      padding: 60px 0 32px;
+      margin-top: 80px;
+      border-top: 3px solid var(--gold);
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 0%, rgba(201, 168, 76, 0.06) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 100%, rgba(26, 92, 66, 0.08) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      line-height: 1.8;
+      color: rgba(232, 201, 106, 0.5);
+      margin-top: 12px;
+    }
+
+    .footer-heading {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+      font-weight: 700;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: rgba(232, 201, 106, 0.6);
+      font-size: 0.9rem;
+      transition: var(--transition);
+    }
+
+    .footer-links a:hover {
+      color: var(--gold2);
+      text-decoration: none;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .social-link {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(201, 168, 76, 0.6);
+      font-size: 0.9rem;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .social-link:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      background: rgba(201, 168, 76, 0.1);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 32px;
+      border-top: 1px solid rgba(201, 168, 76, 0.15);
+      padding-top: 24px;
+    }
+
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: rgba(201, 168, 76, 0.35);
+    }
+
+    /* ============================================================
+   PAGE WRAPPER
+   ============================================================ */
+    #app {
+      position: relative;
+      z-index: 1;
+      min-height: calc(100vh - var(--header-h));
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+      animation: fadeIn 0.4s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* ============================================================
+   HERO SECTION
+   ============================================================ */
+    .hero {
+      min-height: 85vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, #060e18 0%, #0f1f3d 30%, #0d3b2e 65%, #1a5c42 100%);
+    }
+
+    .hero-pattern {
+      position: absolute;
+      inset: 0;
+      opacity: 0.06;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M30 0l7.5 12.99L52.5 7.5v15l12.99 7.5L52.5 37.5V52.5l-15-7.5L30 60l-7.5-12.99L7.5 52.5V37.5L-5.49 30 7.5 22.5V7.5l15 7.5L30 0z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(44, 37, 25, 0.3) 0%, rgba(44, 37, 25, 0.6) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 80px 24px;
+      text-align: center;
+      color: white;
+    }
+
+    .hero-bismillah {
+      font-family: var(--font-ar);
+      font-size: 2.2rem;
+      color: var(--gold2);
+      margin-bottom: 24px;
+      display: block;
+      text-shadow: 0 2px 20px rgba(201, 168, 76, 0.4);
+      animation: goldShimmer 3s ease-in-out infinite;
+    }
+
+    @keyframes goldShimmer {
+
+      0%,
+      100% {
+        text-shadow: 0 2px 20px rgba(201, 168, 76, 0.4);
+      }
+
+      50% {
+        text-shadow: 0 2px 40px rgba(232, 201, 106, 0.8), 0 0 80px rgba(201, 168, 76, 0.3);
+      }
+    }
+
+    .hero-frame {
+      display: inline-block;
+      padding: 40px;
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-top: 3px solid rgba(201, 168, 76, 0.5);
+      border-bottom: 3px solid rgba(201, 168, 76, 0.5);
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: rgba(255, 255, 255, 0.8);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      font-style: italic;
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-family: inherit;
+      transition: var(--transition);
+      border: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), #a07830);
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, var(--gold2), var(--gold));
+      color: var(--navy);
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(232, 201, 106, 0.6);
+      color: var(--gold2);
+    }
+
+    .btn-outline:hover {
+      background: rgba(201, 168, 76, 0.15);
+      border-color: var(--gold2);
+      text-decoration: none;
+    }
+
+    .btn-sm {
+      padding: 10px 20px;
+      font-size: 0.8rem;
+    }
+
+    .btn-dark {
+      background: var(--navy);
+      color: var(--gold2);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    .btn-dark:hover {
+      background: var(--navy2);
+      color: var(--gold);
+      border-color: var(--gold);
+      text-decoration: none;
+    }
+
+    /* ============================================================
+   SECTION HEADERS
+   ============================================================ */
+    .section {
+      padding: 80px 0;
+    }
+
+    .section-sm {
+      padding: 48px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: block;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--navy);
+    }
+
+    .section-sub {
+      font-size: 1rem;
+      color: var(--text2);
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    .divider {
+      width: 56px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 20px auto;
+      position: relative;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: '◆';
+      position: absolute;
+      font-size: 8px;
+      color: var(--gold);
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .divider::before {
+      left: -18px;
+    }
+
+    .divider::after {
+      right: -18px;
+    }
+
+    /* ============================================================
+   CARDS / GRID
+   ============================================================ */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--gold), var(--accent));
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 40px rgba(15, 31, 61, 0.12);
+      border-color: var(--gold);
+    }
+
+    .card:hover::before {
+      opacity: 1;
+    }
+
+    .card-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: var(--navy);
+    }
+
+    .card-text {
+      font-size: 0.9rem;
+      color: var(--text2);
+      line-height: 1.8;
+    }
+
+    /* Purpose Cards */
+    .purpose-card {
+      text-align: center;
+      padding: 40px 28px;
+      border-top: 3px solid transparent;
+      transition: var(--transition);
+    }
+
+    .purpose-card:hover {
+      border-top-color: var(--gold);
+    }
+
+    .purpose-icon {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, rgba(26, 92, 66, 0.12), rgba(201, 168, 76, 0.15));
+      border: 2px solid rgba(201, 168, 76, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      margin: 0 auto 20px;
+      box-shadow: 0 4px 16px rgba(201, 168, 76, 0.1);
+    }
+
+    /* ============================================================
+   SCHEDULE TABLE
+   ============================================================ */
+    .schedule-list {
+      list-style: none;
+    }
+
+    .schedule-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      margin-bottom: 8px;
+      transition: var(--transition);
+      border-left: 4px solid transparent;
+    }
+
+    .schedule-item:hover {
+      border-left-color: var(--gold);
+      border-color: var(--gold);
+      box-shadow: 0 4px 16px rgba(201, 168, 76, 0.1);
+    }
+
+    .schedule-time {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 700;
+      min-width: 80px;
+      letter-spacing: 0.04em;
+    }
+
+    .schedule-name {
+      font-size: 0.95rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+
+    .schedule-note {
+      font-size: 0.8rem;
+      color: var(--text2);
+      font-style: italic;
+    }
+
+    /* Full Schedule Table */
+    .schedule-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+    }
+
+    .schedule-table th,
+    .schedule-table td {
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    [dir="rtl"] .schedule-table th,
+    [dir="rtl"] .schedule-table td {
+      text-align: right;
+    }
+
+    .schedule-table th {
+      background: var(--navy);
+      color: var(--gold2);
+      font-weight: 600;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .schedule-table tr:hover td {
+      background: var(--gold3);
+    }
+
+    /* ============================================================
+   TEACHINGS
+   ============================================================ */
+    .teaching-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      transition: var(--transition);
+      position: relative;
+      border-bottom: 3px solid transparent;
+    }
+
+    .teaching-card:hover {
+      box-shadow: 0 10px 40px rgba(15, 31, 61, 0.12);
+      transform: translateY(-2px);
+      border-color: var(--gold);
+      border-bottom-color: var(--accent);
+    }
+
+    .teaching-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: var(--bg2);
+      color: var(--text2);
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .tag.accent {
+      background: rgba(26, 92, 66, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(26, 92, 66, 0.2);
+      font-weight: 600;
+    }
+
+    .tag.gold {
+      background: rgba(201, 168, 76, 0.12);
+      color: #8a6a1a;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    .teaching-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      line-height: 1.3;
+      color: var(--navy);
+    }
+
+    .teaching-excerpt {
+      font-size: 0.9rem;
+      color: var(--text2);
+      line-height: 1.8;
+    }
+
+    .teaching-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .read-more {
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    /* Search + Filter */
+    .search-filter {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .search-input {
+      flex: 1;
+      min-width: 200px;
+      padding: 10px 16px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(26, 92, 66, 0.1);
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .chip {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text2);
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .chip:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .chip.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    /* ============================================================
+   ABOUT / TIMELINE
+   ============================================================ */
+    .timeline {
+      position: relative;
+      padding-left: 40px;
+    }
+
+    [dir="rtl"] .timeline {
+      padding-left: 0;
+      padding-right: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 12px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--gold), var(--accent), var(--gold));
+    }
+
+    [dir="rtl"] .timeline::before {
+      left: auto;
+      right: 12px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 36px;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -34px;
+      top: 6px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      background: var(--accent);
+      box-shadow: 0 0 0 4px rgba(201, 168, 76, 0.15);
+    }
+
+    [dir="rtl"] .timeline-dot {
+      left: auto;
+      right: -34px;
+    }
+
+    .timeline-year {
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: 0.08em;
+    }
+
+    .timeline-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+
+    .timeline-text {
+      font-size: 0.9rem;
+      color: var(--text2);
+    }
+
+    /* ============================================================
+   VISIT SECTION
+   ============================================================ */
+    .visit-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .info-block {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .info-icon {
+      font-size: 1.3rem;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .info-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .info-val {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    .map-placeholder {
+      background: linear-gradient(135deg, rgba(15, 31, 61, 0.06), rgba(26, 92, 66, 0.06));
+      border: 1px solid rgba(201, 168, 76, 0.25);
+      border-radius: var(--radius);
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text2);
+      font-size: 0.9rem;
+      font-style: italic;
+    }
+
+    /* ============================================================
+   GALLERY
+   ============================================================ */
+    .album-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .album-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      position: relative;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #0f1f3d, #1a5c42);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      transition: var(--transition);
+    }
+
+    .album-card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 16px 48px rgba(15, 31, 61, 0.25);
+      border-color: var(--gold);
+    }
+
+    .album-cover {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      background: linear-gradient(135deg, rgba(15, 31, 61, 0.8), rgba(26, 92, 66, 0.6));
+    }
+
+    .album-info {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 16px;
+      background: linear-gradient(to top, rgba(15, 31, 61, 0.95), transparent);
+      color: white;
+    }
+
+    .album-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold2);
+    }
+
+    .album-count {
+      font-size: 0.8rem;
+      opacity: 0.7;
+      color: rgba(232, 201, 106, 0.6);
+    }
+
+    /* Lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      background: rgba(0, 0, 0, 0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox-inner {
+      position: relative;
+      max-width: 800px;
+      width: 90%;
+      text-align: center;
+    }
+
+    .lightbox-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: #2a2520;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.9rem;
+      font-style: italic;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .lightbox-img span {
+      font-size: 4rem;
+      opacity: 0.3;
+    }
+
+    .lightbox-caption {
+      color: rgba(255, 255, 255, 0.7);
+      margin-top: 16px;
+      font-style: italic;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.8rem;
+      cursor: pointer;
+      opacity: 0.7;
+    }
+
+    .lightbox-close:hover {
+      opacity: 1;
+    }
+
+    .lightbox-nav {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .lightbox-nav button {
+      background: rgba(201, 168, 76, 0.1);
+      border: 1px solid rgba(201, 168, 76, 0.3);
+      color: var(--gold2);
+      padding: 8px 20px;
+      border-radius: var(--radius);
+      font-size: 0.85rem;
+      transition: var(--transition);
+    }
+
+    .lightbox-nav button:hover {
+      background: var(--accent);
+      border-color: var(--gold);
+      color: var(--gold2);
+    }
+
+    /* ============================================================
+   CONTACT FORM
+   ============================================================ */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 3fr 2fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text2);
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(26, 92, 66, 0.1);
+    }
+
+    textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      background: linear-gradient(135deg, var(--accent), var(--accent-h));
+      color: var(--gold2);
+      border: none;
+      padding: 14px 32px;
+      border-radius: var(--radius);
+      font-family: inherit;
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition);
+      font-weight: 600;
+    }
+
+    .form-submit:hover {
+      background: linear-gradient(135deg, var(--gold), #8a6a1a);
+      color: var(--navy);
+      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.3);
+    }
+
+    .success-msg {
+      display: none;
+      background: rgba(26, 92, 66, 0.1);
+      color: var(--accent);
+      border: 1px solid rgba(26, 92, 66, 0.3);
+      padding: 14px 18px;
+      border-radius: var(--radius);
+      margin-top: 12px;
+      font-size: 0.9rem;
+      border-left: 4px solid var(--accent);
+    }
+
+    /* ============================================================
+   TEACHING DETAIL
+   ============================================================ */
+    .detail-header {
+      padding: 60px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .detail-content {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .detail-content h2 {
+      font-size: 1.4rem;
+      margin: 32px 0 16px;
+    }
+
+    .detail-content p {
+      margin-bottom: 20px;
+      color: var(--text2);
+      line-height: 1.9;
+    }
+
+    .detail-content blockquote {
+      border-left: 4px solid var(--gold);
+      padding: 16px 24px;
+      background: linear-gradient(135deg, rgba(26, 92, 66, 0.06), rgba(201, 168, 76, 0.06));
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-style: italic;
+      color: var(--navy);
+      margin: 24px 0;
+      border-top: 1px solid rgba(201, 168, 76, 0.2);
+      border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+    }
+
+    [dir="rtl"] .detail-content blockquote {
+      border-left: none;
+      border-right: 4px solid var(--gold);
+      border-radius: var(--radius) 0 0 var(--radius);
+    }
+
+    /* ============================================================
+   EVENTS
+   ============================================================ */
+    .event-card {
+      display: flex;
+      gap: 20px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-bottom: 12px;
+      transition: var(--transition);
+    }
+
+    .event-card:hover {
+      border-color: var(--gold);
+      box-shadow: 0 6px 24px rgba(15, 31, 61, 0.08);
+    }
+
+    .event-date-box {
+      flex-shrink: 0;
+      width: 64px;
+      text-align: center;
+      background: linear-gradient(135deg, var(--accent), #0d3b2e);
+      color: var(--gold2);
+      border-radius: var(--radius);
+      padding: 10px 6px;
+      border: 1px solid rgba(201, 168, 76, 0.3);
+    }
+
+    .event-day {
+      font-size: 1.6rem;
+      font-weight: 600;
+      line-height: 1;
+    }
+
+    .event-month {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .event-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--navy);
+    }
+
+    .event-desc {
+      font-size: 0.85rem;
+      color: var(--text2);
+    }
+
+    /* ============================================================
+   ETIQUETTE / MISC
+   ============================================================ */
+    .etiquette-list {
+      list-style: none;
+    }
+
+    .etiquette-list li {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      gap: 12px;
+      font-size: 0.95rem;
+    }
+
+    .etiquette-list li::before {
+      content: '✦';
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .etiquette-list li:last-child {
+      border-bottom: none;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, var(--bg2), var(--surface));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px;
+    }
+
+    /* ============================================================
+   BREADCRUMB
+   ============================================================ */
+    .breadcrumb {
+      padding: 16px 0;
+      display: flex;
+      gap: 8px;
+      font-size: 0.8rem;
+      color: var(--text2);
+    }
+
+    .breadcrumb a {
+      color: var(--text2);
+    }
+
+    .breadcrumb span {
+      color: var(--text);
+    }
+
+    /* ============================================================
+   WEEKLY GATHERINGS
+   ============================================================ */
+    .gathering-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      border-left: 4px solid var(--gold);
+      transition: var(--transition);
+    }
+
+    [dir="rtl"] .gathering-card {
+      border-left: none;
+      border-right: 4px solid var(--gold);
+    }
+
+    .gathering-card:hover {
+      box-shadow: 0 8px 32px rgba(15, 31, 61, 0.1);
+      border-color: var(--accent);
+      border-left-color: var(--gold);
+    }
+
+    .gathering-day {
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .gathering-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--navy);
+    }
+
+    .gathering-desc {
+      font-size: 0.9rem;
+      color: var(--text2);
+    }
+
+    /* ============================================================
+   RESPONSIVE
+   ============================================================ */
+    @media (max-width: 900px) {
+
+      .grid-3,
+      .album-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+
+      .visit-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+
+      /* Hide desktop nav */
+      nav {
+        display: none !important;
+      }
+
+      #mobile-menu {
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 31, 61, 0.98);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        z-index: 10000;
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 24px;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      #mobile-menu.open {
+        display: flex;
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .mobile-nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+      }
+
+      .mobile-nav-links a {
+        font-size: 2rem;
+        color: var(--gold2);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .mobile-nav-links a:hover {
+        color: var(--gold);
+        transform: scale(1.1);
+        text-decoration: none;
+      }
+
+      .mobile-close {
+        position: absolute;
+        top: 24px;
+        right: 24px;
+        background: none;
+        border: 1px solid rgba(201, 168, 76, 0.4);
+        border-radius: 50%;
+        color: var(--gold2);
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        transition: var(--transition);
+      }
+
+      .mobile-close:hover {
+        background: rgba(201, 168, 76, 0.1);
+        border-color: var(--gold);
+      }
+
+      .mobile-logo {
+        margin-bottom: 60px;
+        text-align: center;
+        color: var(--gold);
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+
+      .mobile-logo span {
+        display: block;
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: rgba(232, 201, 106, 0.6);
+        margin-top: 8px;
+      }
+
+      .menu-toggle {
+        display: none !important;
+        /* Managed by media query */
+      }
+
+      @media (max-width: 640px) {
+        nav {
+          display: none !important;
+        }
+
+        .menu-toggle {
+          display: flex !important;
+          align-items: center;
+          justify-content: center;
+        }
+
+        body.nav-open {
+          overflow: hidden;
+        }
+
+        .grid-3,
+        .grid-2,
+        .album-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .event-card {
+          flex-direction: column;
+        }
+      }
+
+      /* ============================================================
+   BACK BUTTON
+   ============================================================ */
+      .back-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 24px;
+        transition: var(--transition);
+        font-weight: 600;
+      }
+
+      .back-btn:hover {
+        color: var(--gold);
+        text-decoration: none;
+      }
+
+      /* ============================================================
+   IMAGE PLACEHOLDERS
+   ============================================================ */
+      .img-placeholder {
+        background: linear-gradient(135deg, rgba(15, 31, 61, 0.08) 0%, rgba(26, 92, 66, 0.08) 100%);
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        border-radius: var(--radius);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--text2);
+        font-size: 0.9rem;
+        font-style: italic;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .img-placeholder::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(201, 168, 76, 0.03) 10px, rgba(201, 168, 76, 0.03) 20px);
+      }
+
+      .img-placeholder span {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        padding: 16px;
+      }
+  </style>
+</head>
+
+<body class="lang-en">
+
+  <!-- Geometric Background -->
+  <div class="geo-bg" aria-hidden="true">
+    <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <pattern id="star8" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+          <polygon points="60,5 72,45 110,45 80,68 92,108 60,85 28,108 40,68 10,45 48,45" fill="none" stroke="#c9a84c"
+            stroke-width="0.8" />
+          <rect x="40" y="40" width="40" height="40" transform="rotate(45 60 60)" fill="none" stroke="#1a5c42"
+            stroke-width="0.6" />
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#star8)" />
+    </svg>
+  </div>
+
+  <!-- HEADER -->
+  <header role="banner">
+    <div class="header-inner">
+      <div class="logo" id="logo-link" style="cursor:pointer;" onclick="navigate('home')">
+        Al Mehfuz
+        <span>Khanqah ae Qadriyaa</span>
+      </div>
+      <nav id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="#" onclick="navigate('home'); return false;" data-page="home">Home</a>
+        <a href="#" onclick="navigate('about'); return false;" data-page="about">About</a>
+        <a href="#" onclick="navigate('activities'); return false;" data-page="activities">Activities</a>
+        <a href="#" onclick="navigate('teachings'); return false;" data-page="teachings">Teachings</a>
+        <a href="#" onclick="navigate('gallery'); return false;" data-page="gallery">Gallery</a>
+        <a href="#" onclick="navigate('contact'); return false;" data-page="contact">Contact</a>
+      </nav>
+      <div class="header-right">
+        <div class="lang-switcher" id="langSwitcher">
+          <button class="lang-btn" aria-expanded="false" aria-label="Change language">
+            <span id="currentLangLabel">EN</span> ▾
+          </button>
+          <div class="lang-dropdown" id="langDropdown" role="menu">
+            <button class="lang-option active" onclick="setLang('en')" role="menuitem">🇬🇧 English</button>
+            <button class="lang-option" onclick="setLang('ur')" role="menuitem">اردو</button>
+            <button class="lang-option" onclick="setLang('ar')" role="menuitem">العربية</button>
+            <button class="lang-option" onclick="setLang('hi')" role="menuitem">हिन्दी</button>
+          </div>
+        </div>
+        <button class="menu-toggle" id="menu-toggle-btn" aria-label="Toggle menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- APP -->
+  <div id="app">
+
+    <!-- ===================== HOME PAGE ===================== -->
+    <div class="page active" id="page-home">
+      <!-- Hero -->
+      <section class="hero" aria-label="Welcome">
+        <div class="hero-bg"></div>
+        <div class="hero-pattern"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <div class="hero-frame">
+            <span class="hero-bismillah">بِسْمِ اللَّٰهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+            <h1 class="hero-title" data-i18n="hero-title">Al Mehfuz Khanqah ae Qadriyaa</h1>
+            <p class="hero-sub" data-i18n="hero-sub">A sanctuary of peace, remembrance, and spiritual learning — rooted
+              in the blessed Qadri tradition.</p>
+            <div class="hero-ctas">
+              <button class="btn btn-primary" onclick="navigate('activities')" data-i18n="cta-activities">View
+                Activities</button>
+              <button class="btn btn-outline" onclick="navigate('teachings')" data-i18n="cta-teachings">Read
+                Teachings</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Purpose -->
+      <section class="section" aria-labelledby="purpose-heading">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label" data-i18n="purpose-label">Our Foundation</span>
+            <h2 class="section-title" id="purpose-heading" data-i18n="purpose-title">Our Purpose</h2>
+            <div class="divider"></div>
+            <p class="section-sub" data-i18n="purpose-sub">Three pillars that guide our community</p>
+          </div>
+          <div class="grid-3">
+            <div class="card purpose-card">
+              <div class="purpose-icon">🌿</div>
+              <h3 class="card-title" data-i18n="p1-title">Spiritual Guidance</h3>
+              <p class="card-text" data-i18n="p1-text">Under the guidance of a learned Shaykh, seekers receive personal
+                mentorship on the path of self-purification and nearness to the Divine.</p>
+            </div>
+            <div class="card purpose-card">
+              <div class="purpose-icon">📿</div>
+              <h3 class="card-title" data-i18n="p2-title">Remembrance (Dhikr)</h3>
+              <p class="card-text" data-i18n="p2-text">Regular gatherings of collective dhikr fill the heart with
+                tranquility and connection to Allah, following the blessed Qadri method.</p>
+            </div>
+            <div class="card purpose-card">
+              <div class="purpose-icon">📖</div>
+              <h3 class="card-title" data-i18n="p3-title">Learning & Community</h3>
+              <p class="card-text" data-i18n="p3-text">Weekly study circles, lectures, and community gatherings nurture
+                a life of knowledge, brotherhood, and sincere practice.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Today's Schedule Preview -->
+      <section class="section-sm"
+        style="background: linear-gradient(135deg, rgba(15,31,61,0.04), rgba(26,92,66,0.04)); border-top: 1px solid rgba(201,168,76,0.2); border-bottom: 1px solid rgba(201,168,76,0.2);">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 32px;">
+            <span class="section-label" data-i18n="sched-label">Daily Rhythm</span>
+            <h2 class="section-title" data-i18n="sched-title">Today's Schedule</h2>
+          </div>
+          <ul class="schedule-list" id="home-schedule"></ul>
+          <div style="text-align:center; margin-top: 24px;">
+            <button class="btn btn-dark btn-sm" onclick="navigate('activities')" data-i18n="full-sched">Full Schedule
+              →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest Teachings -->
+      <section class="section" aria-labelledby="teachings-preview-heading">
+        <div class="container">
+          <div class="section-header">
+            <span class="section-label" data-i18n="teachings-label">Wisdom & Knowledge</span>
+            <h2 class="section-title" id="teachings-preview-heading" data-i18n="teachings-title">Latest Teachings</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="grid-3" id="home-teachings"></div>
+          <div style="text-align:center; margin-top: 36px;">
+            <button class="btn btn-dark btn-sm" onclick="navigate('teachings')" data-i18n="all-teachings">All Teachings
+              →</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Visit Us -->
+      <section class="section-sm"
+        style="background: linear-gradient(135deg, rgba(15,31,61,0.05), rgba(26,92,66,0.05)); border-top: 1px solid rgba(201,168,76,0.2);">
+        <div class="container">
+          <div class="section-header" style="margin-bottom: 40px;">
+            <span class="section-label" data-i18n="visit-label">Come & Join Us</span>
+            <h2 class="section-title" data-i18n="visit-title">Visit Us</h2>
+          </div>
+          <div class="visit-grid">
+            <div>
+              <div class="info-block">
+                <div class="info-icon">📍</div>
+                <div>
+                  <div class="info-label" data-i18n="addr-label">Address</div>
+                  <div class="info-val" data-i18n="addr-val">Al Mehfuz Khanqah ae Qadriyaa<br>Spiritual Quarter, Old
+                    City<br>Your City, Country</div>
+                </div>
+              </div>
+              <div class="info-block">
+                <div class="info-icon">🕐</div>
+                <div>
+                  <div class="info-label" data-i18n="hours-label">Visiting Hours</div>
+                  <div class="info-val" data-i18n="hours-val">Daily after Fajr until Isha<br>Special sessions: Thursday
+                    evening<br>Friday lectures after Jumu'ah</div>
+                </div>
+              </div>
+              <button class="btn btn-primary btn-sm" onclick="navigate('contact')" data-i18n="contact-btn">Contact &
+                Directions</button>
+            </div>
+            <div class="map-placeholder" style="height:220px;" role="img" aria-label="Map placeholder">
+              <span>🗺 Map placeholder<br><small>Embed your map here</small></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ===================== ABOUT PAGE ===================== -->
+    <div class="page" id="page-about">
+      <div class="container">
+        <div class="breadcrumb"><a href="#" onclick="navigate('home');return false;" data-i18n="nav-home">Home</a> ›
+          <span data-i18n="nav-about">About</span>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="section-label" data-i18n="about-label">Our Story</span>
+            <h1 class="section-title" data-i18n="about-title">About Al Mehfuz Khanqah</h1>
+            <div class="divider"></div>
+          </div>
+          <div class="visit-grid" style="margin-bottom: 60px;">
+            <div>
+              <p style="margin-bottom: 20px; color: var(--text2); line-height: 1.9;" data-i18n="about-p1">
+                Al Mehfuz Khanqah ae Qadriyaa was established as a center for spiritual cultivation, learning, and the
+                transmission of sacred knowledge within the noble Qadri tradition — a lineage tracing back through
+                generations of blessed scholars to the great Shaykh Abdul Qadir al-Jilani (may Allah sanctify his
+                secret).
+              </p>
+              <p style="color: var(--text2); line-height: 1.9;" data-i18n="about-p2">
+                Our khanqah welcomes sincere seekers from all walks of life who wish to draw closer to the Divine
+                through prayer, remembrance, and the company of the righteous. We uphold the classical tradition of
+                tasawwuf — inner purification and spiritual excellence — guided by qualified teachers in an environment
+                of peace and brotherhood.
+              </p>
+            </div>
+            <div class="img-placeholder" style="height: 300px;" role="img" aria-label="Image of the khanqah">
+              <span>🕌<br><small data-i18n="img-khanqah">Al Mehfuz Khanqah — Image placeholder</small></span>
+            </div>
+          </div>
+
+          <!-- Mission & Values -->
+          <h2 style="font-size:1.6rem; margin-bottom: 24px;" data-i18n="mission-title">Mission & Values</h2>
+          <div class="grid-2" style="margin-bottom: 60px;">
+            <div class="card">
+              <h3 class="card-title" data-i18n="mission-h">Our Mission</h3>
+              <p class="card-text" data-i18n="mission-text">To provide a nurturing space where the human heart may be
+                purified, the soul may find peace in the remembrance of Allah, and the seeker may progress on the path
+                of spiritual excellence under qualified guidance.</p>
+            </div>
+            <div class="card">
+              <h3 class="card-title" data-i18n="values-h">Our Values</h3>
+              <ul style="list-style: none; font-size: 0.9rem; color: var(--text2); line-height: 2.2;">
+                <li>✦ <span data-i18n="v1">Sincerity (Ikhlas)</span></li>
+                <li>✦ <span data-i18n="v2">Respect & Adab (good manners)</span></li>
+                <li>✦ <span data-i18n="v3">Love for the Prophet ﷺ</span></li>
+                <li>✦ <span data-i18n="v4">Service to all without distinction</span></li>
+                <li>✦ <span data-i18n="v5">Preservation of authentic tradition</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Lineage / Timeline -->
+          <h2 style="font-size:1.6rem; margin-bottom: 32px;" data-i18n="silsila-title">Silsila — Spiritual Lineage</h2>
+          <div class="highlight-box" style="margin-bottom: 60px;">
+            <div class="timeline" id="about-timeline"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== ACTIVITIES PAGE ===================== -->
+    <div class="page" id="page-activities">
+      <div class="container">
+        <div class="breadcrumb"><a href="#" onclick="navigate('home');return false;" data-i18n="nav-home">Home</a> ›
+          <span data-i18n="nav-activities">Activities</span>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="section-label" data-i18n="act-label">Daily Life at the Khanqah</span>
+            <h1 class="section-title" data-i18n="act-title">Activities & Schedule</h1>
+            <div class="divider"></div>
+          </div>
+
+          <!-- Daily Schedule Table -->
+          <h2 style="font-size:1.4rem; margin-bottom: 20px;" data-i18n="daily-sched">Daily Prayer & Session Schedule
+          </h2>
+          <div style="overflow-x: auto; margin-bottom: 48px;">
+            <table class="schedule-table" id="activities-table" role="table" aria-label="Daily schedule">
+              <thead>
+                <tr>
+                  <th data-i18n="th-time">Time</th>
+                  <th data-i18n="th-prayer">Prayer / Session</th>
+                  <th data-i18n="th-activity">Activity</th>
+                  <th data-i18n="th-notes">Notes</th>
+                </tr>
+              </thead>
+              <tbody id="sched-tbody"></tbody>
+            </table>
+          </div>
+
+          <!-- Weekly Gatherings -->
+          <h2 style="font-size:1.4rem; margin-bottom: 20px;" data-i18n="weekly-h">Weekly Gatherings</h2>
+          <div class="grid-3" id="gatherings-grid" style="margin-bottom: 48px;"></div>
+
+          <!-- Events -->
+          <h2 style="font-size:1.4rem; margin-bottom: 20px;" data-i18n="events-h">Upcoming Events</h2>
+          <div id="events-list" style="margin-bottom: 48px;"></div>
+
+          <!-- Etiquette -->
+          <h2 style="font-size:1.4rem; margin-bottom: 20px;" data-i18n="etiq-title">Etiquette for Visitors</h2>
+          <div class="highlight-box">
+            <p style="color: var(--text2); margin-bottom: 20px; font-style: italic;" data-i18n="etiq-intro">We welcome
+              all sincere visitors. To maintain the sanctity of this blessed space, we kindly request:</p>
+            <ul class="etiquette-list" id="etiquette-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== TEACHINGS PAGE ===================== -->
+    <div class="page" id="page-teachings">
+      <div class="container">
+        <div class="breadcrumb"><a href="#" onclick="navigate('home');return false;" data-i18n="nav-home">Home</a> ›
+          <span data-i18n="nav-teachings">Teachings</span>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="section-label" data-i18n="teach-label">Sacred Knowledge</span>
+            <h1 class="section-title" data-i18n="teach-page-title">Teachings & Discourses</h1>
+            <div class="divider"></div>
+          </div>
+          <div class="search-filter">
+            <input type="search" class="search-input" id="teach-search" placeholder="Search teachings..."
+              oninput="filterTeachings()" data-i18n-ph="search-ph" aria-label="Search teachings">
+            <div class="chips" id="category-chips"></div>
+          </div>
+          <div class="grid-3" id="teachings-grid"></div>
+          <p id="no-results" style="display:none; color: var(--text2); text-align: center; padding: 40px;"
+            data-i18n="no-results">No teachings found. Try a different search.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== TEACHING DETAIL PAGE ===================== -->
+    <div class="page" id="page-teaching-detail">
+      <div class="container">
+        <div style="padding-top: 32px;">
+          <button class="back-btn" onclick="navigate('teachings')">← <span data-i18n="back-teachings">Back to
+              Teachings</span></button>
+        </div>
+        <div class="detail-content" id="teaching-detail-content"></div>
+        <div style="padding: 60px 0 0;">
+          <h2 style="font-size:1.4rem; margin-bottom: 24px;" data-i18n="related-h">Related Teachings</h2>
+          <div class="grid-3" id="related-teachings"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== GALLERY PAGE ===================== -->
+    <div class="page" id="page-gallery">
+      <div class="container">
+        <div class="breadcrumb"><a href="#" onclick="navigate('home');return false;" data-i18n="nav-home">Home</a> ›
+          <span data-i18n="nav-gallery">Gallery</span>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="section-label" data-i18n="gal-label">Moments of Remembrance</span>
+            <h1 class="section-title" data-i18n="gal-title">Gallery</h1>
+            <div class="divider"></div>
+            <p class="section-sub" data-i18n="gal-sub">Browse our albums — click to explore</p>
+          </div>
+          <div class="album-grid" id="album-grid"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================== CONTACT PAGE ===================== -->
+    <div class="page" id="page-contact">
+      <div class="container">
+        <div class="breadcrumb"><a href="#" onclick="navigate('home');return false;" data-i18n="nav-home">Home</a> ›
+          <span data-i18n="nav-contact">Contact</span>
+        </div>
+        <div class="section">
+          <div class="section-header">
+            <span class="section-label" data-i18n="contact-label">Reach Out</span>
+            <h1 class="section-title" data-i18n="contact-title">Contact Us</h1>
+            <div class="divider"></div>
+          </div>
+          <div class="contact-grid">
+            <div>
+              <h2 style="font-size:1.2rem; margin-bottom: 20px;" data-i18n="contact-form-h">Send a Message</h2>
+              <div class="form-group">
+                <label for="c-name" data-i18n="form-name">Your Name</label>
+                <input type="text" id="c-name" placeholder="Full name" autocomplete="name">
+              </div>
+              <div class="form-group">
+                <label for="c-contact" data-i18n="form-contact">Email or Phone</label>
+                <input type="text" id="c-contact" placeholder="email@example.com or +1234567890">
+              </div>
+              <div class="form-group">
+                <label for="c-msg" data-i18n="form-msg">Message</label>
+                <textarea id="c-msg" placeholder="Your message or enquiry..."></textarea>
+              </div>
+              <button class="form-submit" onclick="submitForm()" data-i18n="form-submit">Send Message</button>
+              <div class="success-msg" id="form-success" data-i18n="form-success">Thank you. Your message has been
+                received. We will respond soon, in sha Allah.</div>
+            </div>
+            <div>
+              <h2 style="font-size:1.2rem; margin-bottom: 20px;" data-i18n="contact-info-h">Contact Information</h2>
+              <div class="card" style="margin-bottom: 16px;">
+                <div class="info-block" style="margin-bottom:16px;">
+                  <div class="info-icon">📍</div>
+                  <div>
+                    <div class="info-label" data-i18n="addr-label">Address</div>
+                    <div class="info-val" data-i18n="addr-val2">Al Mehfuz Khanqah ae Qadriyaa<br>Spiritual Quarter, Old
+                      City<br>Your City, Country</div>
+                  </div>
+                </div>
+                <div class="info-block" style="margin-bottom:16px;">
+                  <div class="info-icon">📞</div>
+                  <div>
+                    <div class="info-label" data-i18n="phone-label">Phone</div>
+                    <div class="info-val">+00 000 000 0000</div>
+                  </div>
+                </div>
+                <div class="info-block">
+                  <div class="info-icon">✉️</div>
+                  <div>
+                    <div class="info-label" data-i18n="email-label">Email</div>
+                    <div class="info-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__"
+                        data-cfemail="e38a8d858ca3828f8e868b859699cd869b828e938f86">[email&#160;protected]</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <h3 style="font-size: 0.9rem; font-weight: 600; margin-bottom: 16px;" data-i18n="visiting-h">Visiting
+                  Hours</h3>
+                <div style="font-size: 0.85rem; color: var(--text2); line-height: 2.2;" data-i18n="visiting-hours">
+                  <div>Mon–Sun: After Fajr – After Isha</div>
+                  <div>Thu Evening: Dhikr Gathering (8 PM)</div>
+                  <div>Fri: Post-Jumu'ah Lecture (2 PM)</div>
+                  <div>Sat Morning: Study Circle (9 AM)</div>
+                </div>
+              </div>
+              <div class="map-placeholder" style="margin-top: 16px; height: 200px;" role="img"
+                aria-label="Map embed placeholder">
+                <span>🗺 Map embed<br><small>Add Google Maps iframe here</small></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end #app -->
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image gallery">
+    <div class="lightbox-inner">
+      <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close gallery">✕</button>
+      <div class="lightbox-img" id="lb-img"><span id="lb-emoji">🕌</span></div>
+      <p class="lightbox-caption" id="lb-caption"></p>
+      <div class="lightbox-nav">
+        <button onclick="lbNav(-1)">← Prev</button>
+        <span id="lb-counter" style="color: rgba(255,255,255,0.6); align-self: center; font-size: 0.85rem;"></span>
+        <button onclick="lbNav(1)">Next →</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo" style="color: var(--gold2); font-size: 1rem;">Al Mehfuz Khanqah ae Qadriyaa</div>
+          <p data-i18n="footer-mission">A sanctuary of peace, remembrance, and spiritual learning — rooted in the
+            blessed Qadri tradition. All are welcome who seek closeness to the Divine with sincerity of heart.</p>
+          <div class="social-links" aria-label="Social media links">
+            <a href="#" class="social-link" aria-label="Facebook">f</a>
+            <a href="#" class="social-link" aria-label="YouTube">▶</a>
+            <a href="#" class="social-link" aria-label="Instagram">◉</a>
+            <a href="#" class="social-link" aria-label="Twitter/X">𝕏</a>
+            <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-heading" data-i18n="quick-links">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="#" onclick="navigate('home');return false;" data-i18n="nav-home">Home</a></li>
+            <li><a href="#" onclick="navigate('about');return false;" data-i18n="nav-about">About</a></li>
+            <li><a href="#" onclick="navigate('activities');return false;" data-i18n="nav-activities">Activities</a>
+            </li>
+            <li><a href="#" onclick="navigate('teachings');return false;" data-i18n="nav-teachings">Teachings</a></li>
+            <li><a href="#" onclick="navigate('gallery');return false;" data-i18n="nav-gallery">Gallery</a></li>
+            <li><a href="#" onclick="navigate('contact');return false;" data-i18n="nav-contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-heading" data-i18n="contact-heading">Contact</div>
+          <p style="font-size:0.85rem; color: rgba(245,242,236,0.6); line-height:1.8;" data-i18n="footer-addr">
+            Spiritual Quarter, Old City<br>Your City, Country<br>+00 000 000 0000<br><a
+              href="/cdn-cgi/l/email-protection" class="__cf_email__"
+              data-cfemail="cca5a2aaa38cada0a1a9a4aab9b6e2a9b4ada1bca0a9">[email&#160;protected]</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="copyright">© 2024 Al Mehfuz Khanqah ae Qadriyaa. All rights reserved.</p>
+        <p style="font-size:0.75rem; color: rgba(245,242,236,0.3);">Demo Site</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile menu">
+    <button class="mobile-close" onclick="toggleMenu()" aria-label="Close menu">✕</button>
+    <div class="mobile-logo">
+      Al Mehfuz
+      <span>Khanqah ae Qadriyaa</span>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="#" onclick="navigate('home'); closeMenu(); return false;">Home</a>
+      <a href="#" onclick="navigate('about'); closeMenu(); return false;">About</a>
+      <a href="#" onclick="navigate('activities'); closeMenu(); return false;">Activities</a>
+      <a href="#" onclick="navigate('teachings'); closeMenu(); return false;">Teachings</a>
+      <a href="#" onclick="navigate('gallery'); closeMenu(); return false;">Gallery</a>
+      <a href="#" onclick="navigate('contact'); closeMenu(); return false;">Contact</a>
+    </div>
+  </div>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script>
+    // ============================================================
+    //  STATIC DATA
+    // ============================================================
+    const DATA = {
+      schedule: [
+        { time: "Fajr", label: { en: "Fajr Prayer", ur: "نماز فجر", ar: "صلاة الفجر", hi: "फजर नमाज़" }, activity: { en: "Congregational Prayer + Morning Dhikr", ur: "باجماعت نماز + صبح کا ذکر", ar: "صلاة الجماعة + ذكر الصباح", hi: "جماعत का नमाज़ + प्रातः ज़िक्र" }, note: { en: "Gates open 30 min before", ur: "30 منٹ پہلے دروازے کھلتے ہیں", ar: "تفتح الأبواب قبل 30 دقيقة", hi: "30 मिनट पहले द्वार खुलते हैं" } },
+        { time: "Sunrise", label: { en: "Ishraq Session", ur: "نماز اشراق", ar: "صلاة الإشراق", hi: "इश्राक सत्र" }, activity: { en: "Optional prayer + Hadith study", ur: "نفل نماز + حدیث کا مطالعہ", ar: "صلاة نافلة + دراسة الحديث", hi: "नफ़्ल नमाज़ + हदीस अध्ययन" }, note: { en: "Optional, all welcome", ur: "اختیاری، سب خوش آمدید", ar: "اختياري، الجميع مرحب بهم", hi: "वैकल्पिक, सभी स्वागत" } },
+        { time: "Dhuhr", label: { en: "Dhuhr Prayer", ur: "نماز ظہر", ar: "صلاة الظهر", hi: "जुहर नमाज़" }, activity: { en: "Congregational Prayer + Quran recitation", ur: "باجماعت نماز + تلاوت قرآن", ar: "صلاة الجماعة + تلاوة القرآن", hi: "जमाअत नमाज़ + कुरान पाठ" }, note: { en: "Lunch available", ur: "کھانا دستیاب ہے", ar: "الغداء متاح", hi: "भोजन उपलब्ध" } },
+        { time: "Asr", label: { en: "Asr Prayer", ur: "نماز عصر", ar: "صلاة العصر", hi: "असर नमाज़" }, activity: { en: "Prayer + Weekly Teaching (Sat)", ur: "نماز + ہفتہ وار درس (ہفتہ)", ar: "صلاة + درس أسبوعي (السبت)", hi: "नमाज़ + साप्ताहिक दरस (शनि)" }, note: { en: "Saturday: special lecture", ur: "ہفتہ: خصوصی درس", ar: "السبت: محاضرة خاصة", hi: "शनिवार: विशेष व्याख्यान" } },
+        { time: "Maghrib", label: { en: "Maghrib Prayer", ur: "نماز مغرب", ar: "صلاة المغرب", hi: "मग़रिब नमाज़" }, activity: { en: "Prayer + Evening Dhikr circle", ur: "نماز + شام کا حلقہ ذکر", ar: "صلاة + حلقة ذكر المساء", hi: "नमाज़ + शाम का ज़िक्र हलक़ा" }, note: { en: "Open to all", ur: "سب کے لیے کھلا", ar: "مفتوح للجميع", hi: "सभी के लिए खुला" } },
+        { time: "Isha", label: { en: "Isha Prayer", ur: "نماز عشاء", ar: "صلاة العشاء", hi: "इशा नमाज़" }, activity: { en: "Prayer + Khatm-e-Qadiri (Thu)", ur: "نماز + ختم قادری (جمعرات)", ar: "صلاة + ختم القادري (الخميس)", hi: "नमाज़ + ख़त्म-ए-क़ादिरी (गुरु)" }, note: { en: "Thursday: Extended gathering", ur: "جمعرات: طویل محفل", ar: "الخميس: اجتماع ممتد", hi: "गुरुवार: विशेष सभा" } },
+      ],
+
+      gatherings: [
+        { day: { en: "Thursday Evening", ur: "جمعرات کی شام", ar: "مساء الخميس", hi: "गुरुवार शाम" }, title: { en: "Dhikr Gathering (Khatm-e-Qadiri)", ur: "حلقۂ ذکر (ختم قادری)", ar: "حلقة الذكر (ختم القادري)", hi: "ज़िक्र सभा (ख़त्म-ए-क़ादिरी)" }, desc: { en: "The most blessed gathering of the week. Collective dhikr, nasheed, and spiritual discourse followed by du'a.", ur: "ہفتے کی سب سے بابرکت محفل۔ اجتماعی ذکر، نعت اور روحانی گفتگو اور پھر دعا۔", ar: "أبرك اجتماع في الأسبوع. ذكر جماعي ونشيد وخطاب روحي ثم دعاء.", hi: "सप्ताह की सबसे बरकत वाली सभा। सामूहिक ज़िक्र, नशीद और रूहानी बयान।" } },
+        { day: { en: "Friday After Jumu'ah", ur: "جمعہ کے بعد", ar: "بعد الجمعة", hi: "जुमा के बाद" }, title: { en: "Friday Discourse", ur: "جمعہ کا بیان", ar: "الخطاب الجمعي", hi: "जुमा बयान" }, desc: { en: "A focused lecture on Islamic spirituality, Quran, Hadith, or life of the Awliya. Open to all.", ur: "اسلامی تصوف، قرآن، حدیث یا اولیاء کی زندگی پر مرکوز درس۔ سب کے لیے کھلا۔", ar: "محاضرة مركزة في التصوف الإسلامي أو القرآن أو الحديث أو حياة الأولياء.", hi: "इस्लामी तसव्वुफ, क़ुरान, हदीस पर केंद्रित व्याख्यान। सभी के लिए खुला।" } },
+        { day: { en: "Saturday Morning", ur: "ہفتہ صبح", ar: "صباح السبت", hi: "शनिवार सुबह" }, title: { en: "Study Circle (Halaqah)", ur: "حلقۂ درس", ar: "حلقة الدراسة", hi: "अध्ययन हलक़ा" }, desc: { en: "In-depth study of classical texts in Islamic spirituality. Currently covering Imam al-Ghazali's works.", ur: "تصوف کی کلاسیکی کتب کا گہرا مطالعہ۔ اس وقت امام غزالی کی کتب زیرِ مطالعہ ہیں۔", ar: "دراسة متعمقة للنصوص الكلاسيكية في التصوف الإسلامي. يتناول حاليًا أعمال الإمام الغزالي.", hi: "इस्लामी आध्यात्मिकता के शास्त्रीय ग्रंथों का गहन अध्ययन।" } },
+      ],
+
+      events: [
+        { day: "15", month: { en: "Jan", ur: "جنوری", ar: "يناير", hi: "जन" }, title: { en: "Annual Urs Gathering", ur: "سالانہ عرس", ar: "التجمع السنوي", hi: "वार्षिक उर्स" }, desc: { en: "Annual commemoration gathering with dhikr, lectures and spiritual programs. All welcome.", ur: "سالانہ یادگاری محفل جس میں ذکر، دروس اور روحانی پروگرام ہوں گے۔ سب خوش آمدید۔", ar: "تجمع تذكاري سنوي مع ذكر ومحاضرات وبرامج روحية. الجميع مرحب بهم.", hi: "वार्षिक स्मरण सभा जिसमें ज़िक्र, दरस और रूहानी कार्यक्रम होंगे।" } },
+        { day: "03", month: { en: "Feb", ur: "فروری", ar: "فبراير", hi: "फर" }, title: { en: "Mawlid Celebration", ur: "میلاد النبی ﷺ", ar: "الاحتفال بالمولد النبوي", hi: "मीलाद उन-नबी ﷺ" }, desc: { en: "A blessed gathering celebrating the birth of our beloved Prophet ﷺ with poetry, recitation, and dhikr.", ur: "حضور نبی اکرم ﷺ کی ولادت کی خوشی میں نعت خوانی، تلاوت اور ذکر کی محفل۔", ar: "تجمع مبارك يحتفل بمولد النبي الكريم ﷺ بالشعر والتلاوة والذكر.", hi: "हमारे प्रिय नबी ﷺ के जन्म की बरकत भरी सभा।" } },
+        { day: "22", month: { en: "Feb", ur: "فروری", ar: "فبراير", hi: "फर" }, title: { en: "Open Day & Interfaith Visit", ur: "اوپن ڈے", ar: "يوم مفتوح", hi: "ओपन डे" }, desc: { en: "An open day for the wider community to visit, learn about the khanqah, and share in our hospitality.", ur: "وسیع برادری کے لیے کھلا دن، کھانقاہ کی زیارت اور ضیافت میں شرکت کریں۔", ar: "يوم مفتوح للمجتمع الأوسع لزيارة الخانقاه والتعرف عليها والمشاركة في ضيافتنا.", hi: "व्यापक समुदाय के लिए खुला दिन।" } },
+      ],
+
+      etiquette: {
+        en: ["Please remove footwear before entering the main hall.", "Dress modestly and respectfully.", "Maintain silence or speak softly in areas of dhikr.", "Mobile phones should be on silent mode during sessions.", "Greet others with Salam and warmth.", "Respect the elders and the spiritual space.", "Children are welcome; please supervise them with care."],
+        ur: ["مرکزی ہال میں داخل ہونے سے پہلے جوتے اتاریں۔", "شرافت اور احترام سے لباس پہنیں۔", "ذکر کے مقامات پر خاموشی رکھیں۔", "اجلاس کے دوران موبائل سائلنٹ رکھیں۔", "سلام اور گرمجوشی سے ملیں۔", "بزرگوں اور روحانی ماحول کا احترام کریں۔", "بچے خوش آمدید ہیں؛ ان کی نگرانی کریں۔"],
+        ar: ["يرجى خلع الأحذية قبل الدخول إلى القاعة الرئيسية.", "ارتدِ ملابس محتشمة وموقرة.", "حافظ على الصمت أو تحدث بهدوء في أماكن الذكر.", "ضع هاتفك على وضع الصمت أثناء الجلسات.", "رحّب بالآخرين بالسلام والدفء.", "احترم الكبار والمساحة الروحية.", "الأطفال مرحب بهم؛ يرجى الإشراف عليهم."],
+        hi: ["मुख्य हॉल में प्रवेश से पहले जूते उतारें।", "शालीन और सम्मानजनक वस्त्र पहनें।", "ज़िक्र के स्थानों में शांति बनाए रखें।", "सत्र के दौरान मोबाइल साइलेंट रखें।", "सलाम और गर्मजोशी से मिलें।", "बुजुर्गों और रूहानी स्थान का सम्मान करें।", "बच्चे स्वागत हैं; कृपया उनकी देखरेख करें।"]
+      },
+
+      timeline: [
+        { year: "1200s", title: { en: "Shaykh Abdul Qadir al-Jilani (RA)", ur: "شیخ عبدالقادر جیلانی ؒ", ar: "الشيخ عبد القادر الجيلاني رحمه الله", hi: "शेख अब्दुल क़ादिर जीलानी (RA)" }, text: { en: "Founder of the Qadri order; the Sultan of all saints, Ghawth al-A'zam.", ur: "سلسلہ قادریہ کے بانی؛ سلطان الاولیاء، غوث الاعظم۔", ar: "مؤسس الطريقة القادرية؛ سلطان الأولياء، الغوث الأعظم.", hi: "क़ादिरी सिलसिले के संस्थापक; सुल्तान-उल-औलिया।" } },
+        { year: "1800s", title: { en: "Shaykh al-Muqaddam (RA)", ur: "شیخ المقدم ؒ", ar: "الشيخ المقدم رحمه الله", hi: "शेख अल-मुक़द्दम (RA)" }, text: { en: "The lineage of the Qadri path reached the Indian subcontinent through blessed teachers.", ur: "سلسلہ قادریہ کا سلسلہ مبارک استادوں کے ذریعے برصغیر تک پہنچا۔", ar: "وصل نسب الطريقة القادرية إلى شبه القارة الهندية عبر معلمين مباركين.", hi: "क़ादिरी सिलसिला मुबारक उस्तादों के ज़रिए भारतीय उपमहाद्वीप तक पहुँचा।" } },
+        { year: "1920s", title: { en: "Founding Shaykh of this Khanqah (RA)", ur: "اس خانقاہ کے بانی شیخ ؒ", ar: "الشيخ المؤسس لهذه الخانقاه رحمه الله", hi: "इस खानक़ाह के संस्थापक शेख (RA)" }, text: { en: "The blessed khanqah was established as a refuge for seekers, continuing the chain of spiritual training.", ur: "یہ مبارک خانقاہ طالبین کے لیے پناہ گاہ کے طور پر قائم کی گئی۔", ar: "أُسِّست هذه الخانقاه المباركة ملاذًا للسالكين.", hi: "यह मुबारक खानक़ाह साधकों के लिए एक शरणस्थल के रूप में स्थापित की गई।" } },
+        { year: "Today", title: { en: "Current Shaykh (may Allah preserve him)", ur: "موجودہ شیخ (اللہ انہیں محفوظ رکھے)", ar: "الشيخ الحالي (حفظه الله)", hi: "वर्तमान शेख (अल्लाह उन्हें महफ़ूज़ रखे)" }, text: { en: "The tradition continues. Seekers are welcomed for bay'ah, suluk, and spiritual guidance.", ur: "روایت جاری ہے۔ بیعت، سلوک اور روحانی رہنمائی کے لیے طالبین کو خوش آمدید کہا جاتا ہے۔", ar: "التقليد مستمر. السالكون مرحب بهم للبيعة والسلوك والإرشاد الروحي.", hi: "परंपरा जारी है। साधकों को बैयत, सुलूक और रूहानी मार्गदर्शन के लिए स्वागत है।" } },
+      ],
+
+      teachings: [
+        { id: 1, slug: "sincerity-ikhlas", tags: ["Purification", "Basics"], title: { en: "The Station of Sincerity (Ikhlas)", ur: "اخلاص کا مقام", ar: "مقام الإخلاص", hi: "इख्लास का मक़ाम" }, date: "2024-01-15", readTime: "8 min", excerpt: { en: "Sincerity — performing every action purely for the sake of Allah — is the foundation of the spiritual path. Without it, no deed carries weight in the unseen.", ur: "اخلاص — ہر عمل صرف اللہ کے لیے کرنا — روحانی سفر کی بنیاد ہے۔ اس کے بغیر کوئی عمل قبولیت نہیں پاتا۔", ar: "الإخلاص — أداء كل عمل خالصًا لله — هو أساس المسيرة الروحية.", hi: "इख्लास — हर काम सिर्फ़ अल्लाह के लिए करना — रूहानी सफ़र की बुनियाद है।" }, content: { en: `<h2>What is Ikhlas?</h2><p>The scholars define ikhlas as purifying one's intention so that the act is done solely to please Allah, without any admixture of worldly desire or seeking the praise of people.</p><blockquote>"Allah does not look at your forms or wealth, but He looks at your hearts and deeds." — Prophet Muhammad ﷺ</blockquote><p>In the Qadri tradition, the purification of intention is the first station the seeker must traverse. The Shaykh guides the mureed to examine every action — prayer, fasting, charity, dhikr — and ask: For whom is this being done?</p><h2>Signs of Sincerity</h2><p>One who has attained ikhlas is indifferent to whether people praise or blame them. Their worship does not increase when people are watching, nor does it decrease in private. They find no difference between public and private deeds.</p>`, ur: "<h2>اخلاص کیا ہے؟</h2><p>علما اخلاص کی تعریف یہ کرتے ہیں کہ نیت کو پاک کرنا تاکہ عمل صرف اللہ کی خوشنودی کے لیے ہو۔</p><blockquote>\"اللہ تمہاری صورتیں اور مال نہیں دیکھتا بلکہ تمہارے دل اور اعمال دیکھتا ہے۔\" — نبی محمد ﷺ</blockquote><p>سلسلہ قادریہ میں نیت کی پاکیزگی پہلا مقام ہے جسے طالب کو طے کرنا ہوتا ہے۔</p>", ar: "<h2>ما هو الإخلاص؟</h2><p>يعرّف العلماء الإخلاص بأنه تصفية النية بحيث يكون العمل خالصًا لله وحده.</p><blockquote>\"إن الله لا ينظر إلى صوركم وأموالكم ولكن ينظر إلى قلوبكم وأعمالكم.\" — النبي محمد ﷺ</blockquote>", hi: "<h2>इख्लास क्या है?</h2><p>उलमा इख्लास को इस तरह परिभाषित करते हैं: नीयत को इतना पाक करना कि हर काम सिर्फ़ अल्लाह की खुशी के लिए हो।</p><blockquote>\"अल्लाह तुम्हारी सूरतें और माल नहीं देखता, बल्कि तुम्हारे दिल और अमल देखता है।\" — नबी मुहम्मद ﷺ</blockquote>" } },
+        { id: 2, slug: "power-of-dhikr", tags: ["Dhikr", "Practice"], title: { en: "The Transformative Power of Dhikr", ur: "ذکر کی روح پرور طاقت", ar: "القوة التحويلية للذكر", hi: "ज़िक्र की रूह-बदलने वाली ताक़त" }, date: "2024-02-10", readTime: "6 min", excerpt: { en: "Remembrance of Allah is not merely ritual repetition — it is a living practice that transforms the heart, softens it, and brings it into alignment with its Divine purpose.", ur: "اللہ کا ذکر محض رسمی تکرار نہیں — یہ ایک زندہ عمل ہے جو دل کو بدل دیتا ہے۔", ar: "ذكر الله ليس مجرد تكرار طقوسي — بل هو ممارسة حية تحوّل القلب وترققه.", hi: "अल्लाह का ज़िक्र महज़ रस्मी दोहराव नहीं — यह एक जीवित अमल है जो दिल को बदल देता है।" }, content: { en: "<h2>Why Dhikr?</h2><p>Allah the Most High says in the Quran: 'Verily, in the remembrance of Allah do hearts find rest.' (13:28). The Qadri tradition emphasizes dhikr as the central pillar of the spiritual path.</p><blockquote>\"Make your tongue always moist with the remembrance of Allah.\" — Hadith</blockquote><p>Regular dhikr gradually dissolves the veils between the servant and their Lord, illuminating the heart with Divine light.</p>", ur: "<h2>ذکر کیوں؟</h2><p>اللہ تعالیٰ فرماتے ہیں: 'یقیناً اللہ کے ذکر سے دل سکون پاتے ہیں۔' (سورہ رعد: 28)</p>", ar: "<h2>لماذا الذكر؟</h2><p>يقول الله تعالى: 'أَلَا بِذِكْرِ اللَّهِ تَطْمَئِنُّ الْقُلُوبُ' (الرعد: 28)</p>", hi: "<h2>ज़िक्र क्यों?</h2><p>अल्लाह ताला फ़रमाता है: 'यक़ीनन अल्लाह के ज़िक्र से दिलों को सुकून मिलता है।' (सूरह रअद: 28)</p>" } },
+        { id: 3, slug: "love-of-prophet", tags: ["Seerah", "Love"], title: { en: "Love of the Prophet ﷺ — The Heart of Tasawwuf", ur: "محبتِ رسول ﷺ — تصوف کا دل", ar: "محبة النبي ﷺ — قلب التصوف", hi: "नबी ﷺ की मुहब्बत — तसव्वुफ़ का दिल" }, date: "2024-03-05", readTime: "10 min", excerpt: { en: "The Qadri path, like all authentic Sufi orders, places profound love for the Prophet ﷺ at its very center. This love is not mere sentiment; it is a transformative force.", ur: "قادری طریقہ، تمام مستند صوفی سلاسل کی طرح، اپنے مرکز میں نبی ﷺ کی گہری محبت رکھتا ہے۔", ar: "تضع الطريقة القادرية، كسائر الطرق الصوفية الأصيلة، محبة النبي ﷺ في صميمها.", hi: "क़ादिरी सिलसिला नबी ﷺ की गहरी मुहब्बत को अपने केंद्र में रखता है।" }, content: { en: "<h2>Complete Love</h2><p>The Prophet ﷺ said: 'None of you truly believes until I am more beloved to them than their parent, their child, and all of mankind.' True love for the Prophet ﷺ is expressed through following his Sunnah in every detail of life.</p><blockquote>\"If you love Allah, then follow me; Allah will love you.\" — Quran 3:31</blockquote>", ur: "<h2>کامل محبت</h2><p>نبی ﷺ نے فرمایا: 'تم میں سے کوئی مومن نہیں ہوسکتا جب تک میں اسے اس کے والدین، اولاد اور سب لوگوں سے زیادہ عزیز نہ ہوجاؤں۔'</p>", ar: "<h2>المحبة الكاملة</h2><p>قال النبي ﷺ: 'لا يؤمن أحدكم حتى أكون أحب إليه من والده وولده والناس أجمعين.'</p>", hi: "<h2>मुकम्मल मुहब्बत</h2><p>नबी ﷺ ने फ़रमाया: 'तुममें से कोई मोमिन नहीं हो सकता जब तक मैं उसे अपने माँ-बाप, औलाद और सभी लोगों से ज़्यादा अज़ीज़ न हो जाऊँ।'</p>" } },
+        { id: 4, slug: "importance-of-a-shaykh", tags: ["Guidance", "Silsila"], title: { en: "The Role of the Spiritual Guide (Shaykh)", ur: "روحانی رہنما کا کردار", ar: "دور المرشد الروحي (الشيخ)", hi: "रूहानी रहनुमा की भूमिका" }, date: "2024-03-20", readTime: "7 min", excerpt: { en: "The scholars of the path have likened the Shaykh to a physician of the heart. Just as the body requires a skilled doctor, the soul requires a qualified guide on its journey.", ur: "اہل تصوف نے شیخ کو دل کا طبیب قرار دیا ہے۔ جیسے جسم کو ماہر ڈاکٹر چاہیے، روح کو بھی رہنما چاہیے۔", ar: "شبّه علماء الطريق الشيخَ بطبيب القلب. تمامًا كما يحتاج الجسم إلى طبيب ماهر.", hi: "अहल-ए-तसव्वुफ़ ने शेख को दिल का डॉक्टर क़रार दिया है।" }, content: { en: "<h2>A Living Connection</h2><p>The Shaykh is not worshipped nor elevated beyond human station. Rather, the Shaykh is a guide — one who has traversed the same path before and knows its hidden pitfalls and illuminated stations.</p>", ur: "<h2>زندہ تعلق</h2><p>شیخ کی عبادت نہیں کی جاتی۔ شیخ رہنما ہے — وہ جو پہلے اسی راستے سے گزرا ہو۔</p>", ar: "<h2>ارتباط حي</h2><p>الشيخ لا يُعبد ولا يُرفع فوق مقامه البشري. بل الشيخ مرشد — من سلك الطريق من قبل.</p>", hi: "<h2>ज़िंदा रिश्ता</h2><p>शेख की इबादत नहीं की जाती। शेख रहनुमा है — वह जो पहले इसी रास्ते से गुज़र चुका हो।</p>" } },
+        { id: 5, slug: "tawakkul-reliance-on-allah", tags: ["Trust", "Basics"], title: { en: "Tawakkul — Complete Trust in Allah", ur: "توکل — اللہ پر مکمل بھروسہ", ar: "التوكل — الاعتماد الكامل على الله", hi: "तवक्कुल — अल्लाह पर पूरा भरोसा" }, date: "2024-04-12", readTime: "5 min", excerpt: { en: "Tawakkul is often misunderstood as passivity, but the great scholars clarify: it is active reliance — doing one's utmost and then surrendering the outcome to Allah.", ur: "توکل کو اکثر بے عملی سمجھا جاتا ہے، لیکن اکابر علما وضاحت کرتے ہیں: یہ فعال توکل ہے۔", ar: "كثيرًا ما يُساء فهم التوكل باعتباره سلبية، لكن العلماء الكبار يوضحون: هو اعتماد فاعل.", hi: "तवक्कुल को अक्सर निष्क्रियता समझा जाता है, लेकिन बड़े उलमा वज़ाहत करते हैं।" }, content: { en: "<h2>The Prophet's Definition</h2><p>When asked about tawakkul, the Prophet ﷺ said: 'Tie your camel, then put your trust in Allah.' Action and reliance go together — we fulfill our duty, then accept whatever Allah decrees with peace.</p>", ur: "<h2>نبی ﷺ کی تعریف</h2><p>توکل کے بارے میں پوچھے جانے پر نبی ﷺ نے فرمایا: 'اونٹ باندھو، پھر اللہ پر توکل کرو۔'</p>", ar: "<h2>تعريف النبي ﷺ</h2><p>حين سُئل عن التوكل، قال النبي ﷺ: 'اعقل الناقة وتوكل.'</p>", hi: "<h2>नबी ﷺ की परिभाषा</h2><p>तवक्कुल के बारे में पूछे जाने पर नबी ﷺ ने फ़रमाया: 'ऊँट बाँधो, फिर अल्लाह पर तवक्कुल करो।'</p>" } },
+        { id: 6, slug: "the-blessed-qadri-way", tags: ["Silsila", "History"], title: { en: "The Blessed Qadri Way — An Introduction", ur: "مبارک قادری طریقہ — ایک تعارف", ar: "الطريقة القادرية المباركة — مقدمة", hi: "मुबारक क़ादिरी तरीक़ा — एक परिचय" }, date: "2024-05-01", readTime: "9 min", excerpt: { en: "The Qadiriyya is one of the oldest and most widespread Sufi orders in the world. Its wisdom, methodology, and spiritual power have transformed countless hearts across centuries.", ur: "قادریہ دنیا کے قدیم ترین اور وسیع ترین صوفی سلاسل میں سے ایک ہے۔", ar: "القادرية من أقدم الطرق الصوفية وأوسعها انتشارًا في العالم.", hi: "क़ादिरिया दुनिया के सबसे पुराने और व्यापक सूफ़ी सिलसिलों में से एक है।" }, content: { en: "<h2>Origins and Spread</h2><p>The Qadiriyya traces its origin to the great Shaykh Abdul Qadir al-Jilani (d. 1166 CE) of Baghdad. Through his spiritual radiance, the order spread from Spain to China, from Central Asia to West Africa.</p>", ur: "<h2>آغاز اور پھیلاؤ</h2><p>قادریہ کا آغاز بغداد کے عظیم شیخ عبدالقادر جیلانی ؒ (وفات 1166ء) سے ہوتا ہے۔</p>", ar: "<h2>النشأة والانتشار</h2><p>تعود القادرية إلى الشيخ العظيم عبد القادر الجيلاني (ت. 1166م) في بغداد.</p>", hi: "<h2>आग़ाज़ और फैलाव</h2><p>क़ादिरिया का आग़ाज़ बग़दाद के महान शेख अब्दुल क़ादिर जीलानी (मृत्यु 1166 ई) से होता है।</p>" } },
+      ],
+
+      albums: [
+        {
+          id: 1, emoji: "🕌", title: { en: "The Khanqah", ur: "خانقاہ", ar: "الخانقاه", hi: "खानक़ाह" }, count: 8, images: [
+            { emoji: "🕌", caption: { en: "Main entrance of Al Mehfuz Khanqah", ur: "خانقاہ کا مرکزی دروازہ", ar: "المدخل الرئيسي للخانقاه", hi: "खानक़ाह का मुख्य दरवाज़ा" } },
+            { emoji: "🏛", caption: { en: "The main dhikr hall", ur: "مرکزی حلقہ ذکر", ar: "قاعة الذكر الرئيسية", hi: "मुख्य ज़िक्र हॉल" } },
+            { emoji: "🌿", caption: { en: "The courtyard garden", ur: "صحن کا باغ", ar: "حديقة الفناء", hi: "आंगन का बाग़" } },
+            { emoji: "📚", caption: { en: "The library collection", ur: "کتب خانہ", ar: "مكتبة الخانقاه", hi: "पुस्तकालय संग्रह" } },
+          ]
+        },
+        {
+          id: 2, emoji: "📿", title: { en: "Dhikr Gatherings", ur: "حلقاتِ ذکر", ar: "حلقات الذكر", hi: "ज़िक्र महफ़िलें" }, count: 12, images: [
+            { emoji: "📿", caption: { en: "Thursday night dhikr circle", ur: "جمعرات کی رات کا حلقہ ذکر", ar: "حلقة ذكر ليلة الخميس", hi: "गुरुवार रात का ज़िक्र हलक़ा" } },
+            { emoji: "🤲", caption: { en: "Collective du'a after dhikr", ur: "ذکر کے بعد اجتماعی دعا", ar: "الدعاء الجماعي بعد الذكر", hi: "ज़िक्र के बाद सामूहिक दुआ" } },
+            { emoji: "🕯", caption: { en: "Evening gathering in the hall", ur: "ہال میں شام کی محفل", ar: "الاجتماع المسائي في القاعة", hi: "हॉल में शाम की महफ़िल" } },
+          ]
+        },
+        {
+          id: 3, emoji: "🌙", title: { en: "Special Events", ur: "خصوصی تقریبات", ar: "مناسبات خاصة", hi: "विशेष कार्यक्रम" }, count: 6, images: [
+            { emoji: "🌙", caption: { en: "Annual Urs gathering", ur: "سالانہ عرس", ar: "التجمع السنوي", hi: "वार्षिक उर्स" } },
+            { emoji: "🌸", caption: { en: "Mawlid celebration", ur: "میلاد النبی ﷺ کی محفل", ar: "الاحتفال بالمولد النبوي", hi: "मीलाद जश्न" } },
+            { emoji: "🎓", caption: { en: "Graduation of students", ur: "طلبا کی سند یابی", ar: "تخرج الطلاب", hi: "छात्रों का दीक्षांत" } },
+          ]
+        },
+      ],
+    };
+
+    // ============================================================
+    //  TRANSLATIONS (labels/UI strings)
+    // ============================================================
+    const T = {
+      en: {
+        'hero-title': 'Al Mehfuz Khanqah ae Qadriyaa',
+        'hero-sub': 'A sanctuary of peace, remembrance, and spiritual learning — rooted in the blessed Qadri tradition.',
+        'cta-activities': 'View Activities', 'cta-teachings': 'Read Teachings',
+        'purpose-label': 'Our Foundation', 'purpose-title': 'Our Purpose', 'purpose-sub': 'Three pillars that guide our community',
+        'p1-title': 'Spiritual Guidance', 'p1-text': 'Under the guidance of a learned Shaykh, seekers receive personal mentorship on the path of self-purification.',
+        'p2-title': 'Remembrance (Dhikr)', 'p2-text': 'Regular gatherings of collective dhikr fill the heart with tranquility and connection to Allah.',
+        'p3-title': 'Learning & Community', 'p3-text': 'Weekly study circles and lectures nurture a life of knowledge, brotherhood, and sincere practice.',
+        'sched-label': 'Daily Rhythm', 'sched-title': "Today's Schedule", 'full-sched': 'Full Schedule →',
+        'teachings-label': 'Wisdom & Knowledge', 'teachings-title': 'Latest Teachings', 'all-teachings': 'All Teachings →',
+        'visit-label': 'Come & Join Us', 'visit-title': 'Visit Us',
+        'addr-label': 'Address', 'addr-val': 'Al Mehfuz Khanqah ae Qadriyaa\nSpiritual Quarter, Old City\nYour City, Country',
+        'hours-label': 'Visiting Hours', 'hours-val': "Daily after Fajr until Isha\nSpecial sessions: Thursday evening\nFriday lectures after Jumu'ah",
+        'contact-btn': 'Contact & Directions',
+        'about-label': 'Our Story', 'about-title': 'About Al Mehfuz Khanqah',
+        'about-p1': "Al Mehfuz Khanqah ae Qadriyaa was established as a center for spiritual cultivation, learning, and the transmission of sacred knowledge within the noble Qadri tradition — tracing back through blessed scholars to Shaykh Abdul Qadir al-Jilani (RA).",
+        'about-p2': "Our khanqah welcomes sincere seekers from all walks of life who wish to draw closer to the Divine through prayer, remembrance, and the company of the righteous.",
+        'img-khanqah': 'Al Mehfuz Khanqah — Image placeholder',
+        'mission-title': 'Mission & Values', 'mission-h': 'Our Mission', 'values-h': 'Our Values',
+        'mission-text': "To provide a nurturing space where the heart may be purified, the soul may find peace in Allah's remembrance, and the seeker may progress under qualified guidance.",
+        'v1': 'Sincerity (Ikhlas)', 'v2': 'Respect & Adab', 'v3': 'Love for the Prophet ﷺ', 'v4': 'Service to all', 'v5': 'Preservation of authentic tradition',
+        'silsila-title': 'Silsila — Spiritual Lineage',
+        'act-label': 'Daily Life at the Khanqah', 'act-title': 'Activities & Schedule',
+        'daily-sched': 'Daily Prayer & Session Schedule',
+        'th-time': 'Time', 'th-prayer': 'Prayer / Session', 'th-activity': 'Activity', 'th-notes': 'Notes',
+        'weekly-h': 'Weekly Gatherings', 'events-h': 'Upcoming Events',
+        'etiq-title': 'Etiquette for Visitors',
+        'etiq-intro': 'We welcome all sincere visitors. To maintain the sanctity of this blessed space, we kindly request:',
+        'teach-label': 'Sacred Knowledge', 'teach-page-title': 'Teachings & Discourses',
+        'search-ph': 'Search teachings...', 'no-results': 'No teachings found. Try a different search.',
+        'back-teachings': 'Back to Teachings', 'related-h': 'Related Teachings',
+        'gal-label': 'Moments of Remembrance', 'gal-title': 'Gallery', 'gal-sub': 'Browse our albums — click to explore',
+        'contact-label': 'Reach Out', 'contact-title': 'Contact Us',
+        'contact-form-h': 'Send a Message', 'contact-info-h': 'Contact Information',
+        'form-name': 'Your Name', 'form-contact': 'Email or Phone', 'form-msg': 'Message',
+        'form-submit': 'Send Message', 'form-success': 'Thank you. Your message has been received. We will respond soon, in sha Allah.',
+        'addr-val2': 'Al Mehfuz Khanqah ae Qadriyaa\nSpiritual Quarter, Old City\nYour City, Country',
+        'phone-label': 'Phone', 'email-label': 'Email', 'visiting-h': 'Visiting Hours',
+        'visiting-hours': 'Mon–Sun: After Fajr – After Isha\nThu Evening: Dhikr Gathering (8 PM)\nFri: Post-Jumu\'ah Lecture (2 PM)\nSat Morning: Study Circle (9 AM)',
+        'nav-home': 'Home', 'nav-about': 'About', 'nav-activities': 'Activities', 'nav-teachings': 'Teachings', 'nav-gallery': 'Gallery', 'nav-contact': 'Contact',
+        'quick-links': 'Quick Links', 'contact-heading': 'Contact',
+        'footer-mission': "A sanctuary of peace, remembrance, and spiritual learning — rooted in the blessed Qadri tradition. All are welcome.",
+        'footer-addr': 'Spiritual Quarter, Old City\nYour City, Country\n+00 000 000 0000\ninfo@almehfuz.example',
+        'copyright': '© 2024 Al Mehfuz Khanqah ae Qadriyaa. All rights reserved.',
+        'read-more': 'Read →',
+      },
+      ur: {
+        'hero-title': 'المحفوظ خانقاہ عائی قادریہ',
+        'hero-sub': 'سکون، ذکر اور روحانی تعلیم کا پناہ گاہ — سلسلہ قادریہ کی برکت میں قائم۔',
+        'cta-activities': 'سرگرمیاں دیکھیں', 'cta-teachings': 'دروس پڑھیں',
+        'purpose-label': 'ہماری بنیاد', 'purpose-title': 'ہمارا مقصد', 'purpose-sub': 'تین ستون جو ہماری برادری کی رہنمائی کرتے ہیں',
+        'p1-title': 'روحانی رہنمائی', 'p1-text': 'ایک عالم شیخ کی رہنمائی میں، طالبین کو تزکیۂ نفس کے راستے پر ذاتی رہنمائی ملتی ہے۔',
+        'p2-title': 'ذکرِ الٰہی', 'p2-text': 'اجتماعی ذکر کی محفلیں دل کو سکون اور اللہ سے تعلق عطا کرتی ہیں۔',
+        'p3-title': 'تعلیم اور برادری', 'p3-text': 'ہفتہ وار درسی حلقے اور دروس علم، اخوت اور خلوص پر مبنی زندگی کو فروغ دیتے ہیں۔',
+        'sched-label': 'روزانہ کا معمول', 'sched-title': 'آج کا شیڈول', 'full-sched': 'مکمل شیڈول ←',
+        'teachings-label': 'علم و حکمت', 'teachings-title': 'تازہ ترین دروس', 'all-teachings': 'تمام دروس ←',
+        'visit-label': 'آئیں اور شامل ہوں', 'visit-title': 'ہماری زیارت کریں',
+        'addr-label': 'پتہ', 'addr-val': 'المحفوظ خانقاہ عائی قادریہ\nروحانی محلہ، پرانا شہر\nآپ کا شہر، ملک',
+        'hours-label': 'دورے کے اوقات', 'hours-val': 'روزانہ فجر کے بعد سے عشاء تک\nخصوصی محافل: جمعرات کی شام\nجمعہ کے بعد دروس',
+        'contact-btn': 'رابطہ اور راستہ',
+        'about-label': 'ہماری کہانی', 'about-title': 'المحفوظ خانقاہ کے بارے میں',
+        'about-p1': 'المحفوظ خانقاہ عائی قادریہ کو روحانی تربیت، تعلیم اور سلسلہ قادریہ کے علوم کی منتقلی کے مرکز کے طور پر قائم کیا گیا۔',
+        'about-p2': 'ہماری خانقاہ ان تمام سچے طالبین کو خوش آمدید کہتی ہے جو نماز، ذکر اور صالحین کی صحبت سے اللہ کا قرب حاصل کرنا چاہتے ہیں۔',
+        'img-khanqah': 'المحفوظ خانقاہ — تصویر',
+        'mission-title': 'مشن اور اقدار', 'mission-h': 'ہمارا مشن', 'values-h': 'ہماری اقدار',
+        'mission-text': 'ایسی پرورش کرنے والی جگہ فراہم کرنا جہاں دل پاک ہو، روح کو ذکرِ الٰہی میں سکون ملے اور طالب قابل رہنماء کی نگرانی میں آگے بڑھے۔',
+        'v1': 'اخلاص', 'v2': 'ادب اور احترام', 'v3': 'نبی ﷺ سے محبت', 'v4': 'بلا تفریق خدمت', 'v5': 'مستند روایت کا تحفظ',
+        'silsila-title': 'سلسلہ — روحانی نسب',
+        'act-label': 'خانقاہ میں روزمرہ کی زندگی', 'act-title': 'سرگرمیاں اور شیڈول',
+        'daily-sched': 'روزانہ نماز اور اجلاس کا شیڈول',
+        'th-time': 'وقت', 'th-prayer': 'نماز / اجلاس', 'th-activity': 'سرگرمی', 'th-notes': 'نوٹس',
+        'weekly-h': 'ہفتہ وار محافل', 'events-h': 'آنے والی تقریبات',
+        'etiq-title': 'زائرین کے لیے آداب',
+        'etiq-intro': 'ہم تمام سچے زائرین کو خوش آمدید کہتے ہیں۔ اس مقدس جگہ کی حرمت قائم رکھنے کے لیے مہربانی سے گزارش ہے:',
+        'teach-label': 'علوم مقدسہ', 'teach-page-title': 'دروس و خطابات',
+        'search-ph': 'دروس تلاش کریں...', 'no-results': 'کوئی درس نہیں ملا۔ دوسری تلاش کریں۔',
+        'back-teachings': 'دروس پر واپس', 'related-h': 'متعلقہ دروس',
+        'gal-label': 'یادِ الٰہی کے لمحات', 'gal-title': 'گیلری', 'gal-sub': 'ہمارے البمز دیکھیں — کلک کریں',
+        'contact-label': 'رابطہ کریں', 'contact-title': 'ہم سے رابطہ کریں',
+        'contact-form-h': 'پیغام بھیجیں', 'contact-info-h': 'رابطہ کی معلومات',
+        'form-name': 'آپ کا نام', 'form-contact': 'ای میل یا فون', 'form-msg': 'پیغام',
+        'form-submit': 'پیغام بھیجیں', 'form-success': 'شکریہ۔ آپ کا پیغام موصول ہوگیا۔ ان شاء اللہ جلد جواب دیں گے۔',
+        'addr-val2': 'المحفوظ خانقاہ عائی قادریہ\nروحانی محلہ، پرانا شہر',
+        'phone-label': 'فون', 'email-label': 'ای میل', 'visiting-h': 'دورے کے اوقات',
+        'visiting-hours': 'پیر–اتوار: فجر کے بعد سے عشاء تک\nجمعرات شام: حلقہ ذکر (8 بجے)\nجمعہ: نماز جمعہ کے بعد درس\nہفتہ صبح: حلقۂ درس (9 بجے)',
+        'nav-home': 'گھر', 'nav-about': 'ہمارے بارے میں', 'nav-activities': 'سرگرمیاں', 'nav-teachings': 'دروس', 'nav-gallery': 'گیلری', 'nav-contact': 'رابطہ',
+        'quick-links': 'فوری روابط', 'contact-heading': 'رابطہ',
+        'footer-mission': 'سکون، ذکر اور روحانی تعلیم کا پناہ گاہ — سلسلہ قادریہ کی برکت میں۔ دل میں خلوص رکھنے والا ہر شخص خوش آمدید ہے۔',
+        'footer-addr': 'روحانی محلہ، پرانا شہر\nآپ کا شہر، ملک\n+00 000 000 0000',
+        'copyright': '© 2024 المحفوظ خانقاہ عائی قادریہ۔ جملہ حقوق محفوظ۔',
+        'read-more': 'پڑھیں ←',
+      },
+      ar: {
+        'hero-title': 'الخانقاه المحفوظ القادرية',
+        'hero-sub': 'ملاذ السلام والذكر والتعلم الروحي — راسخة في الطريقة القادرية المباركة.',
+        'cta-activities': 'عرض الأنشطة', 'cta-teachings': 'قراءة الدروس',
+        'purpose-label': 'أساسنا', 'purpose-title': 'هدفنا', 'purpose-sub': 'ثلاث ركائز توجه مجتمعنا',
+        'p1-title': 'الإرشاد الروحي', 'p1-text': 'تحت إشراف شيخ عالم، يتلقى السالكون إرشادًا شخصيًا في طريق التزكية والتقرب إلى الله.',
+        'p2-title': 'الذكر', 'p2-text': 'تجمعات الذكر الجماعي المنتظمة تملأ القلب بالطمأنينة والتواصل مع الله.',
+        'p3-title': 'التعلم والمجتمع', 'p3-text': 'حلقات الدراسة الأسبوعية والمحاضرات تغذي حياة من العلم والأخوة والممارسة الصادقة.',
+        'sched-label': 'الإيقاع اليومي', 'sched-title': 'جدول اليوم', 'full-sched': 'الجدول الكامل ←',
+        'teachings-label': 'علم وحكمة', 'teachings-title': 'أحدث الدروس', 'all-teachings': 'جميع الدروس ←',
+        'visit-label': 'تعال وانضم إلينا', 'visit-title': 'زُرنا',
+        'addr-label': 'العنوان', 'addr-val': 'الخانقاه المحفوظ القادرية\nالحي الروحي، المدينة القديمة\nمدينتك، البلد',
+        'hours-label': 'أوقات الزيارة', 'hours-val': 'يوميًا بعد الفجر حتى العشاء\nجلسات خاصة: مساء الخميس\nمحاضرات الجمعة بعد الجمعة',
+        'contact-btn': 'التواصل والاتجاهات',
+        'about-label': 'قصتنا', 'about-title': 'عن الخانقاه المحفوظ',
+        'about-p1': 'أُسِّست الخانقاه المحفوظ القادرية مركزًا للتنمية الروحية والتعلم ونقل المعرفة المقدسة في الطريقة القادرية الكريمة.',
+        'about-p2': 'ترحب خانقاهنا بالسالكين الصادقين من جميع مناحي الحياة الذين يرغبون في التقرب من الله بالصلاة والذكر وصحبة الصالحين.',
+        'img-khanqah': 'الخانقاه المحفوظ — صورة',
+        'mission-title': 'المهمة والقيم', 'mission-h': 'مهمتنا', 'values-h': 'قيمنا',
+        'mission-text': 'توفير مساحة تغذوية يمكن فيها للقلب أن يتطهر، وللروح أن تجد السلام في ذكر الله، وللسالك أن يتقدم في الطريق.',
+        'v1': 'الإخلاص', 'v2': 'الأدب والاحترام', 'v3': 'محبة النبي ﷺ', 'v4': 'خدمة الجميع', 'v5': 'الحفاظ على التقليد الأصيل',
+        'silsila-title': 'السلسلة — النسب الروحي',
+        'act-label': 'الحياة اليومية في الخانقاه', 'act-title': 'الأنشطة والجدول الزمني',
+        'daily-sched': 'جدول الصلاة والجلسات اليومية',
+        'th-time': 'الوقت', 'th-prayer': 'الصلاة / الجلسة', 'th-activity': 'النشاط', 'th-notes': 'ملاحظات',
+        'weekly-h': 'التجمعات الأسبوعية', 'events-h': 'المناسبات القادمة',
+        'etiq-title': 'آداب الزوار',
+        'etiq-intro': 'نرحب بجميع الزوار الصادقين. للحفاظ على قدسية هذا المكان المبارك، نرجو منكم بلطف:',
+        'teach-label': 'العلم المقدس', 'teach-page-title': 'الدروس والخطابات',
+        'search-ph': 'ابحث في الدروس...', 'no-results': 'لم يتم العثور على دروس. جرّب بحثًا مختلفًا.',
+        'back-teachings': 'العودة إلى الدروس', 'related-h': 'دروس ذات صلة',
+        'gal-label': 'لحظات الذكر', 'gal-title': 'المعرض', 'gal-sub': 'تصفح ألبوماتنا — انقر للاستكشاف',
+        'contact-label': 'تواصل معنا', 'contact-title': 'اتصل بنا',
+        'contact-form-h': 'إرسال رسالة', 'contact-info-h': 'معلومات الاتصال',
+        'form-name': 'اسمك', 'form-contact': 'البريد الإلكتروني أو الهاتف', 'form-msg': 'الرسالة',
+        'form-submit': 'إرسال الرسالة', 'form-success': 'شكرًا. تم استلام رسالتك. سنرد قريبًا إن شاء الله.',
+        'addr-val2': 'الخانقاه المحفوظ القادرية\nالحي الروحي، المدينة القديمة',
+        'phone-label': 'الهاتف', 'email-label': 'البريد الإلكتروني', 'visiting-h': 'أوقات الزيارة',
+        'visiting-hours': 'الاثنين–الأحد: بعد الفجر حتى العشاء\nمساء الخميس: حلقة الذكر (8 م)\nالجمعة: بعد صلاة الجمعة\nصباح السبت: حلقة الدراسة (9 ص)',
+        'nav-home': 'الرئيسية', 'nav-about': 'من نحن', 'nav-activities': 'الأنشطة', 'nav-teachings': 'الدروس', 'nav-gallery': 'المعرض', 'nav-contact': 'اتصل بنا',
+        'quick-links': 'روابط سريعة', 'contact-heading': 'اتصل',
+        'footer-mission': 'ملاذ السلام والذكر والتعلم الروحي — في الطريقة القادرية المباركة. الجميع مرحب بهم.',
+        'footer-addr': 'الحي الروحي، المدينة القديمة\nمدينتك، البلد\n+00 000 000 0000',
+        'copyright': '© 2024 الخانقاه المحفوظ القادرية. جميع الحقوق محفوظة.',
+        'read-more': 'اقرأ ←',
+      },
+      hi: {
+        'hero-title': 'अल मेहफ़ुज़ खानक़ाह-ए-क़ादिरिया',
+        'hero-sub': 'शांति, ज़िक्र और रूहानी तालीम का पनाहगाह — मुबारक क़ादिरी परंपरा में क़ायम।',
+        'cta-activities': 'गतिविधियाँ देखें', 'cta-teachings': 'दरस पढ़ें',
+        'purpose-label': 'हमारी बुनियाद', 'purpose-title': 'हमारा मक़सद', 'purpose-sub': 'तीन स्तंभ जो हमारी बिरादरी का मार्गदर्शन करते हैं',
+        'p1-title': 'रूहानी मार्गदर्शन', 'p1-text': 'एक विद्वान शेख की देखरेख में, साधकों को आत्म-शुद्धि के मार्ग पर व्यक्तिगत मार्गदर्शन मिलता है।',
+        'p2-title': 'ज़िक्र (याद)', 'p2-text': 'सामूहिक ज़िक्र की नियमित महफ़िलें दिल को सुकून और अल्लाह से जोड़ती हैं।',
+        'p3-title': 'सीखना और बिरादरी', 'p3-text': 'साप्ताहिक अध्ययन हलक़े और दरस इल्म, भाईचारे और सच्चे अमल की ज़िंदगी को पोषित करते हैं।',
+        'sched-label': 'रोज़ाना का नज़्म', 'sched-title': 'आज का शेड्यूल', 'full-sched': 'पूरा शेड्यूल →',
+        'teachings-label': 'इल्म और हिकमत', 'teachings-title': 'ताज़ा दरस', 'all-teachings': 'सभी दरस →',
+        'visit-label': 'आएँ और शामिल हों', 'visit-title': 'हमसे मिलें',
+        'addr-label': 'पता', 'addr-val': 'अल मेहफ़ुज़ खानक़ाह-ए-क़ादिरिया\nरूहानी मोहल्ला, पुराना शहर\nआपका शहर, देश',
+        'hours-label': 'मुलाक़ात के घंटे', 'hours-val': 'रोज़ाना फजर के बाद से इशा तक\nविशेष सत्र: गुरुवार शाम\nजुमा के बाद व्याख्यान',
+        'contact-btn': 'संपर्क और रास्ता',
+        'about-label': 'हमारी कहानी', 'about-title': 'अल मेहफ़ुज़ खानक़ाह के बारे में',
+        'about-p1': 'अल मेहफ़ुज़ खानक़ाह-ए-क़ादिरिया को रूहानी तरक़्क़ी, तालीम और मुबारक क़ादिरी परंपरा में इल्म की रवानगी के मरकज़ के तौर पर क़ायम किया गया।',
+        'about-p2': 'हमारी खानक़ाह उन तमाम सच्चे साधकों का स्वागत करती है जो नमाज़, ज़िक्र और नेक लोगों की सोहबत से अल्लाह का क़ुर्ब पाना चाहते हैं।',
+        'img-khanqah': 'अल मेहफ़ुज़ खानक़ाह — तस्वीर',
+        'mission-title': 'मिशन और मूल्य', 'mission-h': 'हमारा मिशन', 'values-h': 'हमारे मूल्य',
+        'mission-text': 'एक ऐसी जगह मुहैया करना जहाँ दिल पाक हो, रूह को अल्लाह के ज़िक्र में सुकून मिले, और साधक योग्य मार्गदर्शन में आगे बढ़े।',
+        'v1': 'इख्लास (सच्चाई)', 'v2': 'अदब और एहतराम', 'v3': 'नबी ﷺ से मुहब्बत', 'v4': 'बिना भेद के ख़िदमत', 'v5': 'असली रवायत की हिफ़ाज़त',
+        'silsila-title': 'सिलसिला — रूहानी नसब',
+        'act-label': 'खानक़ाह में रोज़मर्रा की ज़िंदगी', 'act-title': 'गतिविधियाँ और शेड्यूल',
+        'daily-sched': 'रोज़ाना नमाज़ और सत्र शेड्यूल',
+        'th-time': 'वक़्त', 'th-prayer': 'नमाज़ / सत्र', 'th-activity': 'गतिविधि', 'th-notes': 'नोट्स',
+        'weekly-h': 'साप्ताहिक महफ़िलें', 'events-h': 'आने वाले कार्यक्रम',
+        'etiq-title': 'आगंतुकों के लिए अदब',
+        'etiq-intro': 'हम सभी सच्चे आगंतुकों का स्वागत करते हैं। इस मुबारक जगह की पाकीज़गी क़ायम रखने के लिए कृपया:',
+        'teach-label': 'मुक़द्दस इल्म', 'teach-page-title': 'दरस और बयानात',
+        'search-ph': 'दरस खोजें...', 'no-results': 'कोई दरस नहीं मिला। अलग खोज करें।',
+        'back-teachings': 'दरस पर वापस', 'related-h': 'संबंधित दरस',
+        'gal-label': 'ज़िक्र के लम्हे', 'gal-title': 'गैलरी', 'gal-sub': 'हमारे एल्बम देखें — क्लिक करें',
+        'contact-label': 'संपर्क करें', 'contact-title': 'हमसे संपर्क करें',
+        'contact-form-h': 'संदेश भेजें', 'contact-info-h': 'संपर्क जानकारी',
+        'form-name': 'आपका नाम', 'form-contact': 'ईमेल या फ़ोन', 'form-msg': 'संदेश',
+        'form-submit': 'संदेश भेजें', 'form-success': 'शुक्रिया। आपका संदेश मिल गया। इंशाअल्लाह जल्द जवाब देंगे।',
+        'addr-val2': 'अल मेहफ़ुज़ खानक़ाह-ए-क़ादिरिया\nरूहानी मोहल्ला, पुराना शहर',
+        'phone-label': 'फ़ोन', 'email-label': 'ईमेल', 'visiting-h': 'मुलाक़ात के घंटे',
+        'visiting-hours': 'सोम–रवि: फजर के बाद से इशा तक\nगुरु शाम: ज़िक्र महफ़िल (8 बजे)\nजुमा: जुमा के बाद व्याख्यान\nशनि सुबह: अध्ययन हलक़ा (9 बजे)',
+        'nav-home': 'होम', 'nav-about': 'हमारे बारे में', 'nav-activities': 'गतिविधियाँ', 'nav-teachings': 'दरस', 'nav-gallery': 'गैलरी', 'nav-contact': 'संपर्क',
+        'quick-links': 'त्वरित लिंक', 'contact-heading': 'संपर्क',
+        'footer-mission': 'शांति, ज़िक्र और रूहानी तालीम का पनाहगाह — मुबारक क़ादिरी परंपरा में। दिल में सच्चाई रखने वाला हर शख्स स्वागत है।',
+        'footer-addr': 'रूहानी मोहल्ला, पुराना शहर\nआपका शहर, देश\n+00 000 000 0000',
+        'copyright': '© 2024 अल मेहफ़ुज़ खानक़ाह-ए-क़ादिरिया। सर्वाधिकार सुरक्षित।',
+        'read-more': 'पढ़ें →',
+      }
+    };
+
+    // ============================================================
+    //  STATE
+    // ============================================================
+    let currentLang = 'en';
+    let currentPage = 'home';
+    let currentTeachingId = null;
+    let lbAlbumId = null;
+    let lbImageIndex = 0;
+    let activeCategory = 'all';
+
+    // ============================================================
+    //  LANGUAGE SYSTEM
+    // ============================================================
+    function setLang(lang) {
+      currentLang = lang;
+      const isRTL = lang === 'ar' || lang === 'ur';
+      document.documentElement.lang = lang;
+      document.documentElement.dir = isRTL ? 'rtl' : 'ltr';
+      document.body.className = `lang-${lang}`;
+
+      // Update label
+      const labels = { en: 'EN', ur: 'اردو', ar: 'عر', hi: 'हिं' };
+      document.getElementById('currentLangLabel').textContent = labels[lang];
+
+      // Update active state in dropdown
+      document.querySelectorAll('.lang-option').forEach((btn, i) => {
+        btn.classList.toggle('active', ['en', 'ur', 'ar', 'hi'][i] === lang);
+      });
+
+      // Close dropdown
+      document.getElementById('langDropdown').classList.remove('open');
+
+      // Update all translatable elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (T[lang] && T[lang][key]) {
+          el.innerHTML = T[lang][key].replace(/\n/g, '<br>');
+        }
+      });
+
+      // Update nav links
+      updateNavLinks();
+      // Re-render dynamic content
+      renderAll();
+
+      // Update page title
+      const titles = { en: 'Al Mehfuz Khanqah ae Qadriyaa', ur: 'المحفوظ خانقاہ عائی قادریہ', ar: 'الخانقاه المحفوظ القادرية', hi: 'अल मेहफ़ुज़ खानक़ाह-ए-क़ादिरिया' };
+      document.title = titles[lang];
+    }
+
+    function toggleLangMenu() {
+      const dd = document.getElementById('langDropdown');
+      const isOpen = dd.classList.toggle('open');
+      document.querySelector('.lang-btn').setAttribute('aria-expanded', isOpen);
+    }
+
+    function t(key) {
+      return (T[currentLang] && T[currentLang][key]) ? T[currentLang][key] : (T.en[key] || key);
+    }
+
+    function tData(obj) {
+      return obj[currentLang] || obj.en || '';
+    }
+
+    // ============================================================
+    //  NAVIGATION
+    // ============================================================
+    function navigate(page, data) {
+      currentPage = page;
+      if (data) currentTeachingId = data.id;
+
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      const target = document.getElementById(`page-${page}`);
+      if (target) { target.classList.add('active'); window.scrollTo(0, 0); }
+
+      // Update nav active state
+      document.querySelectorAll('nav a').forEach(a => {
+        a.classList.toggle('active', a.getAttribute('data-page') === page ||
+          (page === 'teaching-detail' && a.getAttribute('data-page') === 'teachings'));
+      });
+
+      if (page === 'teaching-detail' && data) renderTeachingDetail(data);
+      if (page === 'home') renderHome();
+      if (page === 'about') renderAbout();
+      if (page === 'activities') renderActivities();
+      if (page === 'teachings') renderTeachings();
+      if (page === 'gallery') renderGallery();
+
+      // Close mobile menu
+      closeMenu();
+    }
+
+    function updateNavLinks() {
+      const links = document.querySelectorAll('nav a[data-page]');
+      const pageKeys = { home: 'nav-home', about: 'nav-about', activities: 'nav-activities', teachings: 'nav-teachings', gallery: 'nav-gallery', contact: 'nav-contact' };
+      links.forEach(link => {
+        const page = link.getAttribute('data-page');
+        if (pageKeys[page]) link.textContent = t(pageKeys[page]);
+      });
+    }
+
+    function toggleMenu(e) {
+      if (e) e.stopPropagation();
+      const menu = document.getElementById('mobile-menu');
+      if (!menu) return;
+      const isOpen = menu.classList.toggle('open');
+      document.body.classList.toggle('nav-open', isOpen);
+    }
+
+    function closeMenu() {
+      const menu = document.getElementById('mobile-menu');
+      if (!menu) return;
+      menu.classList.remove('open');
+      document.body.classList.remove('nav-open');
+    }
+
+    // ============================================================
+    //  RENDER FUNCTIONS
+    // ============================================================
+    function renderAll() {
+      if (currentPage === 'home') renderHome();
+      if (currentPage === 'about') renderAbout();
+      if (currentPage === 'activities') renderActivities();
+      if (currentPage === 'teachings') renderTeachings();
+      if (currentPage === 'gallery') renderGallery();
+      if (currentPage === 'teaching-detail' && currentTeachingId) {
+        const post = DATA.teachings.find(t => t.id === currentTeachingId);
+        if (post) renderTeachingDetail(post);
+      }
+      updateNavLinks();
+    }
+
+    function renderHome() {
+      // Schedule preview
+      const sch = document.getElementById('home-schedule');
+      if (sch) sch.innerHTML = DATA.schedule.slice(0, 5).map(s => `
+    <li class="schedule-item">
+      <span class="schedule-time">${s.time}</span>
+      <span class="schedule-name">${tData(s.label)}</span>
+      <span class="schedule-note">${tData(s.note)}</span>
+    </li>`).join('');
+
+      // Teachings preview
+      const th = document.getElementById('home-teachings');
+      if (th) th.innerHTML = DATA.teachings.slice(0, 3).map(post => teachingCardHTML(post)).join('');
+    }
+
+    function renderAbout() {
+      const tl = document.getElementById('about-timeline');
+      if (tl) tl.innerHTML = DATA.timeline.map(item => `
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-year">${item.year}</div>
+      <div class="timeline-title">${tData(item.title)}</div>
+      <div class="timeline-text">${tData(item.text)}</div>
+    </div>`).join('');
+    }
+
+    function renderActivities() {
+      // Table
+      const tbody = document.getElementById('sched-tbody');
+      if (tbody) tbody.innerHTML = DATA.schedule.map(s => `
+    <tr>
+      <td>${s.time}</td>
+      <td>${tData(s.label)}</td>
+      <td>${tData(s.activity)}</td>
+      <td style="color: var(--text2); font-size: 0.85rem;">${tData(s.note)}</td>
+    </tr>`).join('');
+
+      // Gatherings
+      const gg = document.getElementById('gatherings-grid');
+      if (gg) gg.innerHTML = DATA.gatherings.map(g => `
+    <div class="gathering-card">
+      <div class="gathering-day">${tData(g.day)}</div>
+      <div class="gathering-title">${tData(g.title)}</div>
+      <div class="gathering-desc">${tData(g.desc)}</div>
+    </div>`).join('');
+
+      // Events
+      const el = document.getElementById('events-list');
+      if (el) el.innerHTML = DATA.events.map(e => `
+    <div class="event-card">
+      <div class="event-date-box">
+        <div class="event-day">${e.day}</div>
+        <div class="event-month">${tData(e.month)}</div>
+      </div>
+      <div class="event-info">
+        <div class="event-title">${tData(e.title)}</div>
+        <div class="event-desc">${tData(e.desc)}</div>
+      </div>
+    </div>`).join('');
+
+      // Etiquette
+      const etiq = document.getElementById('etiquette-list');
+      const items = DATA.etiquette[currentLang] || DATA.etiquette.en;
+      if (etiq) etiq.innerHTML = items.map(item => `<li>${item}</li>`).join('');
+    }
+
+    function teachingCardHTML(post, onclick) {
+      return `<div class="teaching-card" onclick="${onclick || `navigate('teaching-detail', DATA.teachings.find(t=>t.id===${post.id}))`}" style="cursor:pointer;" role="button" tabindex="0">
+    <div class="teaching-meta">
+      ${post.tags.map(tag => `<span class="tag accent">${tag}</span>`).join('')}
+      <span class="tag">${post.date}</span>
+    </div>
+    <div class="teaching-title">${tData(post.title)}</div>
+    <div class="teaching-excerpt">${tData(post.excerpt).substring(0, 120)}...</div>
+    <div class="teaching-footer">
+      <span style="font-size:0.8rem; color: var(--text2);">⏱ ${post.readTime}</span>
+      <span class="read-more">${t('read-more')}</span>
+    </div>
+  </div>`;
+    }
+
+    function renderTeachings() {
+      renderTeachingCards(DATA.teachings);
+
+      // Category chips
+      const allTags = ['all', ...new Set(DATA.teachings.flatMap(p => p.tags))];
+      const chips = document.getElementById('category-chips');
+      if (chips) chips.innerHTML = allTags.map(tag => `
+    <button class="chip${activeCategory === tag ? ' active' : ''}" onclick="setCategory('${tag}')">${tag === 'all' ? (currentLang === 'ar' ? 'الكل' : currentLang === 'ur' ? 'سب' : currentLang === 'hi' ? 'सभी' : 'All') : tag}</button>
+  `).join('');
+    }
+
+    function renderTeachingCards(posts) {
+      const grid = document.getElementById('teachings-grid');
+      const noResults = document.getElementById('no-results');
+      if (!grid) return;
+      if (posts.length === 0) {
+        grid.innerHTML = '';
+        if (noResults) noResults.style.display = 'block';
+      } else {
+        if (noResults) noResults.style.display = 'none';
+        grid.innerHTML = posts.map(post => teachingCardHTML(post)).join('');
+      }
+    }
+
+    function setCategory(cat) {
+      activeCategory = cat;
+      renderTeachings();
+      filterTeachings();
+    }
+
+    function filterTeachings() {
+      const query = (document.getElementById('teach-search')?.value || '').toLowerCase();
+      let posts = DATA.teachings;
+      if (activeCategory !== 'all') posts = posts.filter(p => p.tags.includes(activeCategory));
+      if (query) posts = posts.filter(p =>
+        tData(p.title).toLowerCase().includes(query) ||
+        tData(p.excerpt).toLowerCase().includes(query) ||
+        p.tags.some(tag => tag.toLowerCase().includes(query))
+      );
+      renderTeachingCards(posts);
+    }
+
+    function renderTeachingDetail(post) {
+      const el = document.getElementById('teaching-detail-content');
+      if (!el) return;
+      el.innerHTML = `
+    <div style="padding: 40px 0 32px;">
+      <div class="teaching-meta" style="margin-bottom: 16px;">
+        ${post.tags.map(tag => `<span class="tag accent">${tag}</span>`).join('')}
+        <span class="tag">${post.date}</span>
+        <span class="tag">⏱ ${post.readTime}</span>
+      </div>
+      <h1 style="font-size: clamp(1.6rem, 4vw, 2.4rem); margin-bottom: 16px;">${tData(post.title)}</h1>
+      <p style="font-style: italic; color: var(--text2); font-size: 1.05rem; margin-bottom: 32px;">${tData(post.excerpt)}</p>
+      <hr style="border: none; border-top: 1px solid var(--border); margin-bottom: 32px;">
+      ${tData(post.content)}
+    </div>`;
+
+      // Related teachings
+      const related = DATA.teachings.filter(p => p.id !== post.id).slice(0, 3);
+      const relEl = document.getElementById('related-teachings');
+      if (relEl) relEl.innerHTML = related.map(p => teachingCardHTML(p)).join('');
+    }
+
+    function renderGallery() {
+      const grid = document.getElementById('album-grid');
+      if (!grid) return;
+      grid.innerHTML = DATA.albums.map(album => `
+    <div class="album-card" onclick="openLightbox(${album.id}, 0)" role="button" tabindex="0" aria-label="${tData(album.title)}">
+      <div class="album-cover">${album.emoji}</div>
+      <div class="album-info">
+        <div class="album-title">${tData(album.title)}</div>
+        <div class="album-count">${album.count} ${currentLang === 'ar' ? 'صور' : currentLang === 'ur' ? 'تصاویر' : currentLang === 'hi' ? 'तस्वीरें' : 'photos'}</div>
+      </div>
+    </div>`).join('');
+    }
+
+    // ============================================================
+    //  LIGHTBOX
+    // ============================================================
+    function openLightbox(albumId, imageIndex) {
+      lbAlbumId = albumId;
+      lbImageIndex = imageIndex;
+      updateLightbox();
+      document.getElementById('lightbox').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    function lbNav(dir) {
+      const album = DATA.albums.find(a => a.id === lbAlbumId);
+      if (!album) return;
+      lbImageIndex = (lbImageIndex + dir + album.images.length) % album.images.length;
+      updateLightbox();
+    }
+
+    function updateLightbox() {
+      const album = DATA.albums.find(a => a.id === lbAlbumId);
+      if (!album) return;
+      const img = album.images[lbImageIndex];
+      document.getElementById('lb-emoji').textContent = img.emoji;
+      document.getElementById('lb-caption').textContent = tData(img.caption);
+      document.getElementById('lb-counter').textContent = `${lbImageIndex + 1} / ${album.images.length}`;
+    }
+
+    // ============================================================
+    //  CONTACT FORM
+    // ============================================================
+    function submitForm() {
+      const name = document.getElementById('c-name')?.value.trim();
+      const contact = document.getElementById('c-contact')?.value.trim();
+      const msg = document.getElementById('c-msg')?.value.trim();
+      if (!name || !contact || !msg) { alert('Please fill in all fields.'); return; }
+      const success = document.getElementById('form-success');
+      if (success) {
+        success.style.display = 'block';
+        document.getElementById('c-name').value = '';
+        document.getElementById('c-contact').value = '';
+        document.getElementById('c-msg').value = '';
+      }
+    }
+
+    // ============================================================
+    //  KEYBOARD ACCESSIBILITY
+    // ============================================================
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        document.getElementById('langDropdown').classList.remove('open');
+      }
+      if (document.getElementById('lightbox').classList.contains('open')) {
+        if (e.key === 'ArrowLeft') lbNav(-1);
+        if (e.key === 'ArrowRight') lbNav(1);
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      // Close language dropdown when clicking outside
+      if (!e.target.closest('.lang-switcher')) {
+        document.getElementById('langDropdown').classList.remove('open');
+      }
+      // Close mobile nav when clicking outside the nav and toggle button
+      const nav = document.getElementById('main-nav');
+      if (nav && nav.classList.contains('open')) {
+        if (!e.target.closest('#main-nav') && !e.target.closest('#menu-toggle-btn')) {
+          closeMenu();
+        }
+      }
+    });
+
+    // Keyboard activation for card buttons
+    // Keyboard activation for card buttons
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' && e.target.getAttribute('role') === 'button') {
+        e.target.click();
+      }
+    });
+
+    // ============================================================
+    //  EXPOSE ALL ONCLICK FUNCTIONS TO WINDOW SCOPE
+    //  Fixes "navigate is not defined" in sandboxed/preview environments
+    // ============================================================
+    window.navigate = navigate;
+    window.setLang = setLang;
+    window.toggleLangMenu = toggleLangMenu;
+    window.toggleMenu = toggleMenu;
+    window.closeMenu = closeMenu;
+    window.filterTeachings = filterTeachings;
+    window.setCategory = setCategory;
+    window.openLightbox = openLightbox;
+    window.closeLightbox = closeLightbox;
+    window.lbNav = lbNav;
+    window.submitForm = submitForm;
+
+    // ============================================================
+    //  INIT
+    // ============================================================
+    function init() {
+      setLang('en');
+      navigate('home');
+
+      // Add event listeners for buttons that no longer use inline onclick
+      const menuBtn = document.getElementById('menu-toggle-btn');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', toggleMenu);
+      }
+
+      const langBtn = document.querySelector('.lang-btn');
+      if (langBtn) {
+        langBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleLangMenu();
+        });
+      }
+    }
+
+    init();
+  </script>
+</body>
+
+</html>
