@@ -32,12 +32,12 @@ export default function SitemapPage() {
     return (
         <div className="page-enter">
             <div className="container">
-                <Breadcrumb items={[{ label: t('nav-home'), href: '/' }, { label: 'Sitemap' }]} />
+                <Breadcrumb items={[{ label: t('nav-home'), href: '/' }, { label: t('nav-sitemap') }]} />
             </div>
 
             <Section>
                 <div className="container">
-                    <SectionHeader label="Sitemap" title="Detailed Site Structure" as="h1" />
+                    <SectionHeader label={t('nav-sitemap')} title={t('nav-sitemap')} as="h1" />
 
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '40px' }}>
                         {sections.map((section, idx) => (

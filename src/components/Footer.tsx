@@ -113,7 +113,7 @@ export default function Footer() {
                                 { href: '/teachings', key: 'nav-teachings' },
                                 { href: '/gallery', key: 'nav-gallery' },
                                 { href: '/contact', key: 'nav-contact' },
-                                { href: '/sitemap', key: 'nav-sitemap' },
+                                { href: '/site-map', key: 'nav-sitemap' },
                             ].map((link) => (
                                 <li key={link.key} style={{ marginBottom: '8px' }}>
                                     <Link
