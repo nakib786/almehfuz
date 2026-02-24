@@ -271,7 +271,8 @@ export default function Header() {
                     padding: '24px',
                     opacity: menuOpen ? 1 : 0,
                     transition: 'opacity 0.4s ease',
-                    overflowY: 'auto'
+                    overflowY: 'auto',
+                    WebkitOverflowScrolling: 'touch'
                 }}
             >
                 {/* Modal Content Box */}
@@ -281,7 +282,7 @@ export default function Header() {
                         background: 'var(--navy)',
                         border: '1px solid var(--gold)',
                         borderRadius: '16px',
-                        padding: '60px 24px 40px',
+                        padding: '40px 24px 30px',
                         width: '100%',
                         maxWidth: '380px',
                         position: 'relative',
@@ -291,7 +292,6 @@ export default function Header() {
                         display: 'flex',
                         flexDirection: 'column',
                         alignItems: 'center',
-                        maxHeight: 'calc(100vh - 48px)',
                         margin: 'auto'
                     }}
                 >
@@ -319,30 +319,29 @@ export default function Header() {
                         ✕
                     </button>
 
-                    <Link href="/" onClick={toggleMenu} className="logo-glow" style={{ marginBottom: '40px', textAlign: 'center', display: 'block', textDecoration: 'none' }}>
+                    <Link href="/" onClick={toggleMenu} className="logo-glow" style={{ marginBottom: '25px', textAlign: 'center', display: 'block', textDecoration: 'none' }}>
                         <Image
                             src="/logo.svg"
                             alt="Al Mehfuz"
-                            width={80}
-                            height={80}
+                            width={64}
+                            height={64}
                             style={{
-                                height: '80px',
+                                height: '64px',
                                 width: 'auto',
-                                margin: '0 auto 12px',
+                                margin: '0 auto 10px',
                                 display: 'block'
                             }}
                         />
-                        <div style={{ color: 'var(--gold2)', fontSize: '1.8rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('hero-title')}</div>
-                        <div style={{ height: '1px', background: 'var(--gold)', width: '60px', margin: '20px auto', opacity: 0.3 }} />
+                        <div style={{ color: 'var(--gold2)', fontSize: '1.4rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('hero-title')}</div>
+                        <div style={{ height: '1px', background: 'var(--gold)', width: '50px', margin: '15px auto', opacity: 0.3 }} />
                     </Link>
 
                     <div
                         style={{
                             display: 'flex',
                             flexDirection: 'column',
-                            gap: '12px',
+                            gap: '8px',
                             width: '100%',
-                            overflowY: 'auto',
                             padding: '4px'
                         }}
                     >
@@ -365,6 +364,7 @@ export default function Header() {
                                     textAlign: 'center',
                                     transition: 'var(--transition)',
                                     border: isActive(link.href) ? '1px solid var(--gold)' : '1px solid transparent',
+                                    lineHeight: '1.2'
                                 }}
                             >
                                 {t(link.key)}
