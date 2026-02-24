@@ -54,8 +54,8 @@ export default function Footer() {
                                     display: 'block'
                                 }}
                             />
-                            <div style={{ color: 'var(--gold2)', fontSize: '1rem', fontWeight: 600 }}>
-                                Al Mehfuz Khanqah ae Qadriyaa
+                            <div style={{ color: 'var(--gold2)', fontSize: '1rem', fontWeight: 600, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                                {t('hero-title')}
                             </div>
                         </Link>
                         <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(232,201,106,0.5)', marginTop: '12px' }}>

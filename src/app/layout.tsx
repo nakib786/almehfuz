@@ -5,6 +5,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import GeoBg from "@/components/GeoBg";
 import Lightbox from "@/components/Lightbox";
+import BackgroundMusic from "@/components/BackgroundMusic";
 
 export const metadata: Metadata = {
   title: "Al Mehfuz Khanqah ae Qadriyaa",
@@ -43,6 +44,7 @@ export default function RootLayout({
           </div>
           <Footer />
           <Lightbox />
+          <BackgroundMusic />
         </LangProvider>
       </body>
     </html>

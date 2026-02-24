@@ -116,21 +116,10 @@ export default function Header() {
                                 fontWeight: 600,
                                 color: 'var(--gold2)',
                                 lineHeight: 1.2,
-                                letterSpacing: '0.02em',
+                                letterSpacing: '0.05em',
+                                textTransform: 'uppercase',
                             }}>
-                                Al Mehfuz
-                            </span>
-                            <span
-                                style={{
-                                    display: 'block',
-                                    fontSize: '0.7rem',
-                                    fontWeight: 400,
-                                    color: 'rgba(232,201,106,0.6)',
-                                    letterSpacing: '0.1em',
-                                    textTransform: 'uppercase',
-                                }}
-                            >
-                                Khanqah ae Qadriyaa
+                                {t('hero-title')}
                             </span>
                         </div>
                     </Link>
@@ -343,8 +332,7 @@ export default function Header() {
                                 display: 'block'
                             }}
                         />
-                        <div style={{ color: 'var(--gold2)', fontSize: '1.8rem', fontWeight: 600, letterSpacing: '0.05em' }}>Al Mehfuz</div>
-                        <div style={{ fontSize: '0.75rem', color: 'rgba(232,201,106,0.6)', letterSpacing: '0.2em', textTransform: 'uppercase', marginTop: '6px' }}>Khanqah ae Qadriyaa</div>
+                        <div style={{ color: 'var(--gold2)', fontSize: '1.8rem', fontWeight: 600, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('hero-title')}</div>
                         <div style={{ height: '1px', background: 'var(--gold)', width: '60px', margin: '20px auto', opacity: 0.3 }} />
                     </Link>
 

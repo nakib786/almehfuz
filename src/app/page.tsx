@@ -78,12 +78,26 @@ export default function HomePage() {
                 fontSize: 'clamp(2.4rem, 6vw, 4rem)',
                 fontWeight: 600,
                 lineHeight: 1.2,
-                marginBottom: '20px',
+                marginBottom: '10px',
                 textShadow: '0 2px 20px rgba(0,0,0,0.3)',
               }}
             >
               {t('hero-title')}
             </h1>
+            <h2
+              style={{
+                fontSize: 'clamp(1rem, 2.5vw, 1.4rem)',
+                fontWeight: 500,
+                letterSpacing: '0.15em',
+                color: 'var(--gold2)',
+                marginBottom: '20px',
+                textTransform: 'uppercase',
+                maxWidth: '680px',
+                margin: '0 auto 20px',
+              }}
+            >
+              {t('hero-title-main')}
+            </h2>
             <p
               style={{
                 fontSize: '1.1rem',
@@ -281,6 +295,37 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
+
+      {/* Sajjada Nashin Section */}
+      <SectionSm style={{ background: 'var(--navy)', color: 'white', position: 'relative', overflow: 'hidden' }}>
+        <div className="hero-pattern opacity-10" />
+        <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            style={{
+              padding: '40px',
+              border: '1px solid rgba(232, 201, 106, 0.2)',
+              borderRadius: 'var(--radius)',
+              background: 'rgba(255,255,255,0.03)',
+              maxWidth: '800px',
+              margin: '0 auto'
+            }}
+          >
+            <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--gold)', display: 'block', marginBottom: '16px', fontWeight: 600 }}>
+              {t('sajjada-label')}
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.2rem)', fontWeight: 600, color: 'white', marginBottom: '12px', letterSpacing: '0.02em' }}>
+              {t('sajjada-name')}
+            </h2>
+            <div style={{ width: '60px', height: '2px', background: 'var(--gold)', margin: '20px auto' }} />
+            <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', fontStyle: 'italic' }}>
+              {t('hero-sub')}
+            </p>
+          </motion.div>
+        </div>
+      </SectionSm>
 
       {/* Visit Us */}
       <SectionSm
